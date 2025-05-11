@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,11 +21,10 @@ jobs:
         python-version: '3.11'
 
     - name: Install dependencies
-      run: |
-          pip install sphinx
+      run: pip install sphinx
 
     - name: Build docs
-      run: sphinx-build docs/source docs/builde
+      run: sphinx-build docs/source docs/_build/html
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
