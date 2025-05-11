@@ -1,0 +1,9 @@
+project = 'Learn XMake'
+copyright = '2025, mccakit'
+author = 'mccakit'
+release = '0.0.0'
+extensions = []
+templates_path = ['_templates']
+exclude_patterns = []
+html_theme = 'alabaster'
+html_static_path = ['_static']
