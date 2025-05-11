@@ -11,7 +11,9 @@ Xmake was created to bring that same level of simplicity and automation
 to C/C++ ecosystem, letting you focus more on writing code and less on
 wrestling with build scripts
 
-I wrote this document, to provide a more easygoing learning experience
+I created this document to provide a more easygoing learning experience
+for the people just starting out, as the main documentation is hard to
+read
 
 #################
  Who This Is For
