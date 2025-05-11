@@ -1,11 +1,8 @@
-# Build artifacts
-/build/
+# Xmake cache
+.xmake/
+build/
 
-# Zed Editor configuration
-/.zed/
+# MacOS Cache
+.DS_Store
 
-# Clang-Tidy configuration
-/.clang-tidy
 
-# Lua-related configuration
-/.luarc.json
