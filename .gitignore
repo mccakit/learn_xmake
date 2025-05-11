@@ -1,4 +1,11 @@
+# Build artifacts
 /build/
-./.zed/
-./.clang-tidy
-./.luarc.json
+
+# Zed Editor configuration
+/.zed/
+
+# Clang-Tidy configuration
+/.clang-tidy
+
+# Lua-related configuration
+/.luarc.json
