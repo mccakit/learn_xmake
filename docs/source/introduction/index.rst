@@ -6,6 +6,7 @@
    :maxdepth: 1
    :caption: Contents:
 
-   intro_and_scope
-   overview
+   purpose
+   audience
+   scope
    guide
