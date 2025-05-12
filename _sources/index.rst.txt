@@ -6,4 +6,5 @@
    :maxdepth: 2
    :caption: Contents:
 
-   introduction/index.rst
+   introduction/index
+   overview/index

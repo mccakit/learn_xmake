@@ -1,10 +1,10 @@
-#########################
- Layout of This Document
-#########################
+########
+ Layout
+########
 
-*****************
- Getting Started
-*****************
+**********
+ Overview
+**********
 
 In this section, I'll explain the reasons why you should consider
 switching to XMake, and I'll also guide you through how to follow this
