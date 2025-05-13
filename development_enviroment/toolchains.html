@@ -62,27 +62,26 @@ enable <em>ATL</em>, <em>MFC</em>, <em>CLI</em> support and Modules</p></li>
 </li>
 <li><p>Build LLVM</p>
 <blockquote>
-<div><ol class="arabic simple">
+<div><ol class="arabic">
 <li><p>Clone the LLVM repository. I recommend using <a class="reference external" href="https://github.com/tcottin/llvm-project">this PR branch</a> as it enables
-Doxygen-style formatting on hover.</p></li>
-</ol>
+Doxygen-style formatting on hover.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Don’t forget to switch to <code class="docutils literal notranslate"><span class="pre">clangd-doxygen-parser</span></code> branch</p>
 </div>
-<ol class="arabic simple">
+</li>
 <li><p>Open the x64 Native Tools Command Prompt and navigate to to
 your llvm repository</p></li>
-<li><p>Create build configuation file with <code class="docutils literal notranslate"><span class="pre">cmake</span></code></p></li>
-</ol>
+<li><p>Create build configuation file with <code class="docutils literal notranslate"><span class="pre">cmake</span></code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>I recommend building clang, lld, clang-tools-extra, lldb,
-libcxx, libc and compiler-rt with exception handling, run-time
-type information and assertions enabled. For targets, I suggest
-building X86, ARM, RISC-V and WebAssembly.</p>
+libcxx, libc and compiler-rt with exception handling,
+run-time type information and assertions enabled. For
+targets, I suggest building X86, ARM, RISC-V and
+WebAssembly.</p>
 </div>
-<ol class="arabic simple">
+</li>
 <li><p>Build and install LLVM with <code class="docutils literal notranslate"><span class="pre">ninja</span> <span class="pre">--build</span></code> and <code class="docutils literal notranslate"><span class="pre">`cmake</span>
 <span class="pre">--install</span></code></p></li>
 </ol>
