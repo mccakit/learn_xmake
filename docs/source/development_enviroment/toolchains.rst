@@ -32,20 +32,22 @@ dependencies.
          <https://github.com/tcottin/llvm-project>`_ as it enables
          Doxygen-style formatting on hover.
 
-      .. note::
+         .. note::
 
-         Don't forget to switch to ``clangd-doxygen-parser`` branch
+            Don't forget to switch to ``clangd-doxygen-parser`` branch
 
       #. Open the x64 Native Tools Command Prompt and navigate to to
          your llvm repository
+
       #. Create build configuation file with ``cmake``
 
-      .. note::
+         .. note::
 
-         I recommend building clang, lld, clang-tools-extra, lldb,
-         libcxx, libc and compiler-rt with exception handling, run-time
-         type information and assertions enabled. For targets, I suggest
-         building X86, ARM, RISC-V and WebAssembly.
+            I recommend building clang, lld, clang-tools-extra, lldb,
+            libcxx, libc and compiler-rt with exception handling,
+            run-time type information and assertions enabled. For
+            targets, I suggest building X86, ARM, RISC-V and
+            WebAssembly.
 
       #. Build and install LLVM with ``ninja --build`` and ```cmake
          --install``
