@@ -44,7 +44,8 @@ dependencies.
 
          I recommend building clang, lld, clang-tools-extra, lldb,
          libcxx, libc and compiler-rt with exception handling, run-time
-         type information and assertions enabled
+         type information and assertions enabled. For targets, I suggest
+         building X86, ARM, RISC-V and WebAssembly.
 
       #. Build and install LLVM with ``ninja --build`` and ```cmake
          --install``
