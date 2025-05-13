@@ -2,12 +2,17 @@
  Toolchains
 ############
 
-In this tutorial we are going to use LLVM/Clang for most tutorials,
-intel OneAPI will be used for SYCL, rustc will be used for rust.
+In this document, following toolchains will be used:
 
-************
- LLVM/Clang
-************
+-  LLVM
+-  DPC++
+-  Cuda
+-  Rustc
+-  Zig
+
+******
+ LLVM
+******
 
 To install LLVM with all available backends, you must compile it from
 source. On Windows, this requires Visual Studio and additional
@@ -24,7 +29,7 @@ dependencies.
 
       #. Install scoop by following instructions in this `link
          <https://scoop.sh/>`_
-      #. Install cmake, python, make, git with ``scoop install``
+      #. Install cmake, python, make and git with ``scoop install``
 
 #. Build and Install LLVM
 
@@ -61,6 +66,40 @@ dependencies.
 
 #. Add the bin folder of your installation to your PATH
 
-**************
- Intel OneAPI
-**************
+*******
+ DPC++
+*******
+
+#. Download and run DPC++ installer from this `link
+   <https://sycl.tech/getting-started#implementations>`__.
+
+******
+ CUDA
+******
+
+#. Download CUDA using scoop
+
+      .. code::
+
+         scoop install main/cuda
+
+*******
+ Rustc
+*******
+
+#. Download rustup using scoop
+
+      .. code::
+
+         scoop install main/rustup
+
+*****
+ Zig
+*****
+
+#. Download zig and zls using scoop
+
+      .. code::
+
+         scoop install versions/zig-dev
+         scoop install versions/zls-dev

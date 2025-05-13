@@ -35,10 +35,16 @@
             
   <section id="toolchains">
 <h1>Toolchains<a class="headerlink" href="#toolchains" title="Link to this heading">¶</a></h1>
-<p>In this tutorial we are going to use LLVM/Clang for most tutorials,
-intel OneAPI will be used for SYCL, rustc will be used for rust.</p>
-<section id="llvm-clang">
-<h2>LLVM/Clang<a class="headerlink" href="#llvm-clang" title="Link to this heading">¶</a></h2>
+<p>In this document, following toolchains will be used:</p>
+<ul class="simple">
+<li><p>LLVM</p></li>
+<li><p>DPC++</p></li>
+<li><p>Cuda</p></li>
+<li><p>Rustc</p></li>
+<li><p>Zig</p></li>
+</ul>
+<section id="llvm">
+<h2>LLVM<a class="headerlink" href="#llvm" title="Link to this heading">¶</a></h2>
 <p>To install LLVM with all available backends, you must compile it from
 source. On Windows, this requires Visual Studio and additional
 dependencies.</p>
@@ -56,7 +62,7 @@ enable <em>ATL</em>, <em>MFC</em>, <em>CLI</em> support and Modules</p></li>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Install scoop by following instructions in this <a class="reference external" href="https://scoop.sh/">link</a></p></li>
-<li><p>Install cmake, python, make, git with <code class="docutils literal notranslate"><span class="pre">scoop</span> <span class="pre">install</span></code></p></li>
+<li><p>Install cmake, python, make and git with <code class="docutils literal notranslate"><span class="pre">scoop</span> <span class="pre">install</span></code></p></li>
 </ol>
 </div></blockquote>
 </li>
@@ -99,8 +105,48 @@ files</p></li>
 <li><p>Add the bin folder of your installation to your PATH</p></li>
 </ol>
 </section>
-<section id="intel-oneapi">
-<h2>Intel OneAPI<a class="headerlink" href="#intel-oneapi" title="Link to this heading">¶</a></h2>
+<section id="dpc">
+<h2>DPC++<a class="headerlink" href="#dpc" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Download and run DPC++ installer from this <a class="reference external" href="https://sycl.tech/getting-started#implementations">link</a>.</p></li>
+</ol>
+</section>
+<section id="cuda">
+<h2>CUDA<a class="headerlink" href="#cuda" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Download CUDA using scoop</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">main</span><span class="o">/</span><span class="n">cuda</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="rustc">
+<h2>Rustc<a class="headerlink" href="#rustc" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Download rustup using scoop</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">main</span><span class="o">/</span><span class="n">rustup</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="zig">
+<h2>Zig<a class="headerlink" href="#zig" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Download zig and zls using scoop</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">versions</span><span class="o">/</span><span class="n">zig</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">scoop</span> <span class="n">install</span> <span class="n">versions</span><span class="o">/</span><span class="n">zls</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
 </section>
 </section>
 
