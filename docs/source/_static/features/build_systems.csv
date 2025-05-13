@@ -1,0 +1,8 @@
+"Build System","Description"
+"CMake","Cross-platform build system generator widely used in C/C++ projects"
+"Meson","Modern build system focused on speed, simplicity, and ease of use"
+"Autoconf","Tool for generating portable configure scripts for Unix-like systems"
+"SCons","Python-based build system for software construction"
+"NMake","Microsoft command-line build utility for Makefiles"
+"GnuMake","Classic Unix-based build automation tool using Makefiles"
+"GN","Meta-build system used by Chromium projects, works with Ninja"

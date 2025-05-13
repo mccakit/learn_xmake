@@ -1,0 +1,5 @@
+"Build System","Termux (-j1)","MacOS (-j1)"
+"xmake","1m57.707s","39.937s"
+"ninja","1m52.845s","38.995s"
+"cmake (gen + make)","5.416s + 2m10.539s","1.203s + 41.737s"
+"cmake (gen + ninja)","4.458s + 1m54.868s","0.988s + 38.022s"
