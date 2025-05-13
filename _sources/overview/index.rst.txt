@@ -6,4 +6,7 @@
    :maxdepth: 1
    :caption: Contents:
 
-   xmake
+   about
+   workflow
+   features
+   switch

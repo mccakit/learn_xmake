@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>What is XMake &#8212; Learn XMake 0.0.0 documentation</title>
+    <title>Workflow &#8212; Learn XMake 0.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
@@ -14,7 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Overview" href="index.html" />
+    <link rel="next" title="Features" href="features.html" />
+    <link rel="prev" title="About XMake" href="about.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -32,24 +33,14 @@
 
           <div class="body" role="main">
             
-  <section id="what-is-xmake">
-<h1>What is XMake<a class="headerlink" href="#what-is-xmake" title="Link to this heading">¶</a></h1>
-<p>XMake is a cross-platform build utility based on Lua. It is lightweight,
-fast and has a concise and intuitive syntax. It has it’s own package
-manager and can leverage the existing C/C++ ecosystem.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Xmake = Build backend + Project Generator + Package Manager</p>
-</div>
-<section id="why-switch-to-it">
-<h2>Why switch to it?<a class="headerlink" href="#why-switch-to-it" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Other build systems are too terrible</p></li>
-<li><p>Easy to write, refactor, and debug</p></li>
-<li><p>Supports integration with packages from other build systems</p></li>
-<li><p>Seamlessly integrates with development environments</p></li>
-</ul>
-</section>
+  <section id="workflow">
+<h1>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">¶</a></h1>
+<p>XMake utilizes the <code class="docutils literal notranslate"><span class="pre">xmake.lua</span></code> file and the <code class="docutils literal notranslate"><span class="pre">.xmake</span></code> cache folder
+for project configuration. To start, create an xmake project by using
+the <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">create</span></code> command in your desired directory. Then, configure
+the project by editing the project configuration file or by running the
+xmake config command to fine-tune the settings. After you are done you
+can build the project with <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">build</span></code> and run it with <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">run</span></code></p>
 </section>
 
 
@@ -82,7 +73,10 @@ manager and can leverage the existing C/C++ ecosystem.</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Overview</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">What is XMake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="about.html">About XMake</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="switch.html">Why switch?</a></li>
 </ul>
 </li>
 </ul>
@@ -92,7 +86,8 @@ manager and can leverage the existing C/C++ ecosystem.</p>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">Overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Overview</a></li>
+      <li>Previous: <a href="about.html" title="previous chapter">About XMake</a></li>
+      <li>Next: <a href="features.html" title="next chapter">Features</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -117,7 +112,7 @@ manager and can leverage the existing C/C++ ecosystem.</p>
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
-      <a href="../_sources/overview/xmake.rst.txt"
+      <a href="../_sources/overview/workflow.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

@@ -1,0 +1,4 @@
+"Feature","Description"
+"Distributed Compilation","Build tasks are distributed across multiple machines to accelerate compilation"
+"Remote Compilation","Source code is compiled on a remote server instead of locally"
+"Local/Remote Build Cache","Previously compiled artifacts are reused locally or from a remote cache to speed up rebuilds"

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Features &#8212; Learn XMake 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=7026087e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Why switch?" href="switch.html" />
+    <link rel="prev" title="Workflow" href="workflow.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="features">
+<h1>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h1>
+<p>Wide support for languages, toolchains, build systems, package managers
+and project types</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Xmake is designed to sit on top of the existing C/C++ ecosystem</p>
+</div>
+<table class="docutils align-left" id="id1">
+<caption><span class="caption-text">Toolchains</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Toolchain</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>armcc</p></td>
+<td><p>ARM Compiler Version 5 of Keil MDK</p></td>
+</tr>
+<tr class="row-odd"><td><p>armclang</p></td>
+<td><p>ARM Compiler Version 6 of Keil MDK</p></td>
+</tr>
+<tr class="row-even"><td><p>c51</p></td>
+<td><p>Keil development tools for the 8051 Microcontroller Architecture</p></td>
+</tr>
+<tr class="row-odd"><td><p>circle</p></td>
+<td><p>A new C++20 compiler. It’s written from scratch and designed for easy extension.</p></td>
+</tr>
+<tr class="row-even"><td><p>clang</p></td>
+<td><p>A C language family frontend for LLVM</p></td>
+</tr>
+<tr class="row-odd"><td><p>clang-cl</p></td>
+<td><p>LLVM Clang C/C++ Compiler compatible with msvc</p></td>
+</tr>
+<tr class="row-even"><td><p>cosmocc</p></td>
+<td><p>build-once run-anywhere c library</p></td>
+</tr>
+<tr class="row-odd"><td><p>cross</p></td>
+<td><p>Common cross compilation toolchain</p></td>
+</tr>
+<tr class="row-even"><td><p>cuda</p></td>
+<td><p>CUDA Toolkit (nvcc, nvc, nvc++, nvfortran)</p></td>
+</tr>
+<tr class="row-odd"><td><p>dlang</p></td>
+<td><p>D Programming Language Compiler (Auto)</p></td>
+</tr>
+<tr class="row-even"><td><p>dmd</p></td>
+<td><p>D Programming Language Compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>dpcpp</p></td>
+<td><p>Intel LLVM C++ Compiler for data parallel programming model based on Khronos SYCL</p></td>
+</tr>
+<tr class="row-even"><td><p>emcc</p></td>
+<td><p>A toolchain for compiling to asm.js and WebAssembly</p></td>
+</tr>
+<tr class="row-odd"><td><p>envs</p></td>
+<td><p>Environment variables toolchain</p></td>
+</tr>
+<tr class="row-even"><td><p>fasm</p></td>
+<td><p>Flat Assembler</p></td>
+</tr>
+<tr class="row-odd"><td><p>fpc</p></td>
+<td><p>Free Pascal Programming Language Compiler</p></td>
+</tr>
+<tr class="row-even"><td><p>gcc</p></td>
+<td><p>GNU Compiler Collection</p></td>
+</tr>
+<tr class="row-odd"><td><p>gdc</p></td>
+<td><p>The GNU D Compiler (GDC).</p></td>
+</tr>
+<tr class="row-even"><td><p>gfortran</p></td>
+<td><p>GNU Fortran Programming Language Compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>gnu-rm</p></td>
+<td><p>GNU Arm Embedded Toolchain</p></td>
+</tr>
+<tr class="row-even"><td><p>go</p></td>
+<td><p>Go Programming Language Compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>hdk</p></td>
+<td><p>Harmony SDK</p></td>
+</tr>
+<tr class="row-even"><td><p>iararm</p></td>
+<td><p>IAR ARM C/C++ Compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>icc</p></td>
+<td><p>Intel C/C++ Compiler</p></td>
+</tr>
+<tr class="row-even"><td><p>icx</p></td>
+<td><p>Intel LLVM C/C++ Compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>ifort</p></td>
+<td><p>Intel Fortran Compiler</p></td>
+</tr>
+<tr class="row-even"><td><p>ifx</p></td>
+<td><p>Intel LLVM Fortran Compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>iverilog</p></td>
+<td><p>Icarus Verilog</p></td>
+</tr>
+<tr class="row-even"><td><p>kotlin-native</p></td>
+<td><p>The Kotlin Programming Language Compiler.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ldc</p></td>
+<td><p>The LLVM-based D Compiler.</p></td>
+</tr>
+<tr class="row-even"><td><p>llvm</p></td>
+<td><p>A collection of modular and reusable compiler and toolchain technologies</p></td>
+</tr>
+<tr class="row-odd"><td><p>masm32</p></td>
+<td><p>The MASM32 SDK</p></td>
+</tr>
+<tr class="row-even"><td><p>mingw</p></td>
+<td><p>Minimalist GNU for Windows</p></td>
+</tr>
+<tr class="row-odd"><td><p>msvc</p></td>
+<td><p>Microsoft Visual C/C++ Compiler</p></td>
+</tr>
+<tr class="row-even"><td><p>muslcc</p></td>
+<td><p>The musl-based cross-compilation toolchains</p></td>
+</tr>
+<tr class="row-odd"><td><p>nasm</p></td>
+<td><p>NASM Assembler</p></td>
+</tr>
+<tr class="row-even"><td><p>ndk</p></td>
+<td><p>Android NDK</p></td>
+</tr>
+<tr class="row-odd"><td><p>nim</p></td>
+<td><p>Nim Programming Language Compiler</p></td>
+</tr>
+<tr class="row-even"><td><p>rust</p></td>
+<td><p>Rust Programming Language Compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>sdcc</p></td>
+<td><p>Small Device C Compiler</p></td>
+</tr>
+<tr class="row-even"><td><p>swift</p></td>
+<td><p>Swift Programming Language Compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>ti-c2000</p></td>
+<td><p>TI-CGT C2000 compiler</p></td>
+</tr>
+<tr class="row-even"><td><p>ti-c6000</p></td>
+<td><p>TI-CGT C6000 compiler</p></td>
+</tr>
+<tr class="row-odd"><td><p>tinycc</p></td>
+<td><p>Tiny C Compiler</p></td>
+</tr>
+<tr class="row-even"><td><p>verilator</p></td>
+<td><p>Verilator open-source SystemVerilog simulator and lint system</p></td>
+</tr>
+<tr class="row-odd"><td><p>wasi</p></td>
+<td><p>WASI-enabled WebAssembly C/C++ toolchain.</p></td>
+</tr>
+<tr class="row-even"><td><p>xcode</p></td>
+<td><p>Xcode IDE</p></td>
+</tr>
+<tr class="row-odd"><td><p>yasm</p></td>
+<td><p>The Yasm Modular Assembler</p></td>
+</tr>
+<tr class="row-even"><td><p>zig</p></td>
+<td><p>Zig Programming Language Compiler</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-left" id="id2">
+<caption><span class="caption-text">Languages</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Language</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>General-purpose programming language widely used for systems, embedded, and performance-critical applications</p></td>
+</tr>
+<tr class="row-odd"><td><p>C++</p></td>
+<td><p>Object-oriented extension of C, used for high-performance applications, game development, and software libraries</p></td>
+</tr>
+<tr class="row-even"><td><p>Objective-C</p></td>
+<td><p>Superset of C, primarily used for macOS and iOS development</p></td>
+</tr>
+<tr class="row-odd"><td><p>Objective-C++</p></td>
+<td><p>Combination of Objective-C and C++, used mainly for macOS/iOS development</p></td>
+</tr>
+<tr class="row-even"><td><p>Swift</p></td>
+<td><p>Modern language for Apple platforms, designed to replace Objective-C</p></td>
+</tr>
+<tr class="row-odd"><td><p>Assembly</p></td>
+<td><p>Low-level language providing direct control over hardware</p></td>
+</tr>
+<tr class="row-even"><td><p>Golang</p></td>
+<td><p>Compiled language by Google, known for simplicity and concurrency support</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rust</p></td>
+<td><p>Safe systems programming language with modern tooling and memory safety</p></td>
+</tr>
+<tr class="row-even"><td><p>Dlang</p></td>
+<td><p>Systems programming language with C-like syntax and modern features</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fortran</p></td>
+<td><p>High-performance computing language used mainly in scientific and numerical computing</p></td>
+</tr>
+<tr class="row-even"><td><p>Cuda</p></td>
+<td><p>NVIDIA’s parallel computing platform and language extension for C/C++</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zig</p></td>
+<td><p>Low-level systems language with C interoperability and manual memory management</p></td>
+</tr>
+<tr class="row-even"><td><p>Vala</p></td>
+<td><p>GObject-based language for GNOME development with C-like syntax</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pascal</p></td>
+<td><p>Structured language used in teaching and some legacy systems</p></td>
+</tr>
+<tr class="row-even"><td><p>Nim</p></td>
+<td><p>Statically typed compiled language with Python-like syntax and performance focus</p></td>
+</tr>
+<tr class="row-odd"><td><p>Verilog</p></td>
+<td><p>Hardware description language (HDL) used in digital circuit design</p></td>
+</tr>
+<tr class="row-even"><td><p>FASM</p></td>
+<td><p>Flat Assembler for x86 architecture, known for speed and minimalism</p></td>
+</tr>
+<tr class="row-odd"><td><p>NASM</p></td>
+<td><p>Netwide Assembler, a popular assembler for x86 and x86-64</p></td>
+</tr>
+<tr class="row-even"><td><p>YASM</p></td>
+<td><p>Modular assembler based on NASM syntax, supports more platforms</p></td>
+</tr>
+<tr class="row-odd"><td><p>MASM32</p></td>
+<td><p>Microsoft Macro Assembler for Windows platform</p></td>
+</tr>
+<tr class="row-even"><td><p>Cppfront</p></td>
+<td><p>Experimental C++ syntax and compiler frontend by Herb Sutter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kotlin</p></td>
+<td><p>Modern language for JVM and Android, with native and multiplatform support</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-left" id="id3">
+<caption><span class="caption-text">Package Managers</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Package Manager</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>Xrepo</p></td>
+<td><p>Official package manager for XMake</p></td>
+</tr>
+<tr class="row-odd"><td><p>Conan</p></td>
+<td><p>C/C++ package manager</p></td>
+</tr>
+<tr class="row-even"><td><p>Conda</p></td>
+<td><p>Package manager for scientific and data science packages</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vcpkg</p></td>
+<td><p>Microsoft C/C++ library manager</p></td>
+</tr>
+<tr class="row-even"><td><p>Homebrew/Linuxbrew</p></td>
+<td><p>Popular package manager for macOS and Linux</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pacman</p></td>
+<td><p>Package manager used by Arch Linux and MSYS2</p></td>
+</tr>
+<tr class="row-even"><td><p>Apt</p></td>
+<td><p>Package manager for Debian-based systems</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clib</p></td>
+<td><p>Package manager for C libraries</p></td>
+</tr>
+<tr class="row-even"><td><p>Dub</p></td>
+<td><p>Package manager for the D programming language</p></td>
+</tr>
+<tr class="row-odd"><td><p>Portage</p></td>
+<td><p>Package manager for Gentoo Linux</p></td>
+</tr>
+<tr class="row-even"><td><p>Nimble</p></td>
+<td><p>Package manager for the Nim programming language</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cargo</p></td>
+<td><p>Package manager for the Rust programming language</p></td>
+</tr>
+<tr class="row-even"><td><p>Zypper</p></td>
+<td><p>Package manager for openSUSE</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-left" id="id4">
+<caption><span class="caption-text">Build Systems</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Build System</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>CMake</p></td>
+<td><p>Cross-platform build system generator widely used in C/C++ projects</p></td>
+</tr>
+<tr class="row-odd"><td><p>Meson</p></td>
+<td><p>Modern build system focused on speed, simplicity, and ease of use</p></td>
+</tr>
+<tr class="row-even"><td><p>Autoconf</p></td>
+<td><p>Tool for generating portable configure scripts for Unix-like systems</p></td>
+</tr>
+<tr class="row-odd"><td><p>SCons</p></td>
+<td><p>Python-based build system for software construction</p></td>
+</tr>
+<tr class="row-even"><td><p>NMake</p></td>
+<td><p>Microsoft command-line build utility for Makefiles</p></td>
+</tr>
+<tr class="row-odd"><td><p>GnuMake</p></td>
+<td><p>Classic Unix-based build automation tool using Makefiles</p></td>
+</tr>
+<tr class="row-even"><td><p>GN</p></td>
+<td><p>Meta-build system used by Chromium projects, works with Ninja</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-left" id="id5">
+<caption><span class="caption-text">Project Types</span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Project Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>Static libraries</p></td>
+<td><p>Precompiled code libraries linked at compile time</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shared libraries</p></td>
+<td><p>Dynamic libraries loaded at runtime</p></td>
+</tr>
+<tr class="row-even"><td><p>Console/CLI applications</p></td>
+<td><p>Command-line programs without a graphical interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>CUDA programs</p></td>
+<td><p>Applications using NVIDIA’s CUDA for GPU computing</p></td>
+</tr>
+<tr class="row-even"><td><p>Qt applications</p></td>
+<td><p>GUI applications built using the Qt framework</p></td>
+</tr>
+<tr class="row-odd"><td><p>WDK drivers</p></td>
+<td><p>Windows Driver Kit drivers (UMDF, KMDF, WDM)</p></td>
+</tr>
+<tr class="row-even"><td><p>WinSDK applications</p></td>
+<td><p>Applications using the Windows SDK</p></td>
+</tr>
+<tr class="row-odd"><td><p>MFC applications</p></td>
+<td><p>Microsoft Foundation Class GUI applications</p></td>
+</tr>
+<tr class="row-even"><td><p>Darwin applications</p></td>
+<td><p>macOS applications (with Metal support)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frameworks and bundles</p></td>
+<td><p>macOS-specific application packages</p></td>
+</tr>
+<tr class="row-even"><td><p>SWIG modules</p></td>
+<td><p>Modules generated using SWIG for languages like Lua, Python</p></td>
+</tr>
+<tr class="row-odd"><td><p>LuaRocks modules</p></td>
+<td><p>Modules for Lua managed with LuaRocks</p></td>
+</tr>
+<tr class="row-even"><td><p>Protobuf programs</p></td>
+<td><p>Applications using Google’s Protocol Buffers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lex/Yacc programs</p></td>
+<td><p>Programs generated from lexical and parser generators</p></td>
+</tr>
+<tr class="row-even"><td><p>Linux kernel modules</p></td>
+<td><p>Loadable kernel modules for Linux</p></td>
+</tr>
+</tbody>
+</table>
+<p>On par with Ninja in build performance</p>
+<table class="docutils align-left" id="id6">
+<caption><span class="caption-text">Multi Task Compilation</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Build System</p></td>
+<td><p>Termux (8 core, -j12)</p></td>
+<td><p>MacOS (8 core, -j12)</p></td>
+</tr>
+<tr class="row-even"><td><p>xmake</p></td>
+<td><p>24.890s</p></td>
+<td><p>12.264s</p></td>
+</tr>
+<tr class="row-odd"><td><p>ninja</p></td>
+<td><p>25.682s</p></td>
+<td><p>11.327s</p></td>
+</tr>
+<tr class="row-even"><td><p>cmake (gen + make)</p></td>
+<td><p>5.416s + 28.473s</p></td>
+<td><p>1.203s + 14.030s</p></td>
+</tr>
+<tr class="row-odd"><td><p>cmake (gen + ninja)</p></td>
+<td><p>4.458s + 24.842s</p></td>
+<td><p>0.988s + 11.644s</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-left" id="id7">
+<caption><span class="caption-text">Single Task Compilation</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Build System</p></td>
+<td><p>Termux (-j1)</p></td>
+<td><p>MacOS (-j1)</p></td>
+</tr>
+<tr class="row-even"><td><p>xmake</p></td>
+<td><p>1m57.707s</p></td>
+<td><p>39.937s</p></td>
+</tr>
+<tr class="row-odd"><td><p>ninja</p></td>
+<td><p>1m52.845s</p></td>
+<td><p>38.995s</p></td>
+</tr>
+<tr class="row-even"><td><p>cmake (gen + make)</p></td>
+<td><p>5.416s + 2m10.539s</p></td>
+<td><p>1.203s + 41.737s</p></td>
+</tr>
+<tr class="row-odd"><td><p>cmake (gen + ninja)</p></td>
+<td><p>4.458s + 1m54.868s</p></td>
+<td><p>0.988s + 38.022s</p></td>
+</tr>
+</tbody>
+</table>
+<p>Seamlessly integrates with your development environment</p>
+<table class="docutils align-left" id="id8">
+<caption><span class="caption-text">Integration</span><a class="headerlink" href="#id8" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Plugins/Addons</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>xmake-vscode</p></td>
+<td><p>Official VSCode extension for XMake with build tasks, diagnostics, and code navigation</p></td>
+</tr>
+<tr class="row-odd"><td><p>xmake-sublime</p></td>
+<td><p>XMake plugin for Sublime Text supporting project generation and build commands</p></td>
+</tr>
+<tr class="row-even"><td><p>xmake-idea</p></td>
+<td><p>XMake plugin for IntelliJ-based IDEs to support build integration</p></td>
+</tr>
+<tr class="row-odd"><td><p>xmake.vim</p></td>
+<td><p>Vim plugin offering XMake commands, diagnostics, and keybindings for quick build/run</p></td>
+</tr>
+<tr class="row-even"><td><p>xmake-visualstudio</p></td>
+<td><p>XMake extension for Visual Studio enabling native project support</p></td>
+</tr>
+<tr class="row-odd"><td><p>xmake-qtcreator</p></td>
+<td><p>Qt Creator plugin to support XMake as an external build system</p></td>
+</tr>
+<tr class="row-even"><td><p>xmake-gradle</p></td>
+<td><p>Gradle integration for invoking XMake during Android builds</p></td>
+</tr>
+<tr class="row-odd"><td><p>xmake-luals-addon</p></td>
+<td><p>Addon for Lua Language Server to provide better IntelliSense for <cite>xmake.lua</cite></p></td>
+</tr>
+</tbody>
+</table>
+<p>Additional features you may find valuable</p>
+<table class="docutils align-left" id="id9">
+<caption><span class="caption-text">Additional Features</span><a class="headerlink" href="#id9" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Feature</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>Distributed Compilation</p></td>
+<td><p>Build tasks are distributed across multiple machines to accelerate compilation</p></td>
+</tr>
+<tr class="row-odd"><td><p>Remote Compilation</p></td>
+<td><p>Source code is compiled on a remote server instead of locally</p></td>
+</tr>
+<tr class="row-even"><td><p>Local/Remote Build Cache</p></td>
+<td><p>Previously compiled artifacts are reused locally or from a remote cache to speed up rebuilds</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Learn XMake</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="about.html">About XMake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflow.html">Workflow</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="switch.html">Why switch?</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Overview</a><ul>
+      <li>Previous: <a href="workflow.html" title="previous chapter">Workflow</a></li>
+      <li>Next: <a href="switch.html" title="next chapter">Why switch?</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, mccakit.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/overview/features.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
