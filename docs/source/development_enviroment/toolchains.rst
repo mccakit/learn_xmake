@@ -26,7 +26,7 @@ dependencies.
          <https://scoop.sh/>`_
       #. Install cmake, python, make, git with ``scoop install``
 
-#. Build LLVM
+#. Build and Install LLVM
 
       #. Clone the LLVM repository. I recommend using `this PR branch
          <https://github.com/tcottin/llvm-project>`_ as it enables
