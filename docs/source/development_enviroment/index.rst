@@ -9,6 +9,5 @@
    prerequisites
    toolchains
    sdks
-   xmake
-   zed_editor
+   editor
    extra
