@@ -35,6 +35,26 @@
             
   <section id="sdk-s">
 <h1>SDK’s<a class="headerlink" href="#sdk-s" title="Link to this heading">¶</a></h1>
+<p>In this document, a x64 Debian Bookworm Docker image will be used as a
+sysroot for cross compilation.</p>
+<ol class="arabic">
+<li><p>Install <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a> and
+<a class="reference external" href="https://rancherdesktop.io/">Rancher Desktop</a></p></li>
+<li><p>Pull the Debian Image, Build a container then install <code class="docutils literal notranslate"><span class="pre">g++</span></code></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">debian</span><span class="p">:</span><span class="n">bookworm</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">deb</span> <span class="n">debian</span><span class="p">:</span><span class="n">bookworm</span>
+<span class="n">apt</span> <span class="n">update</span><span class="p">;</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">g</span><span class="o">++</span><span class="p">;</span> <span class="n">exit</span>
+<span class="n">docker</span> <span class="n">export</span> <span class="n">deb</span> <span class="o">-</span><span class="n">o</span> <span class="n">deb</span><span class="o">.</span><span class="n">tar</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Export the container as a .tar file and extract it as <strong>admin</strong></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">export</span> <span class="n">deb</span> <span class="o">-</span><span class="n">o</span> <span class="n">deb</span><span class="o">.</span><span class="n">tar</span>
+</pre></div>
+</div>
 </section>
 
 
@@ -72,7 +92,6 @@
 <li class="toctree-l2"><a class="reference internal" href="toolchains.html">Toolchains</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">SDK’s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="editor.html">Editor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extra.html">Extra</a></li>
 </ul>
 </li>
 </ul>

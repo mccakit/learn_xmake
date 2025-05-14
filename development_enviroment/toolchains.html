@@ -38,6 +38,7 @@
 <p>In this document, following toolchains will be used:</p>
 <ul class="simple">
 <li><p>LLVM</p></li>
+<li><p>EMCC</p></li>
 <li><p>DPC++</p></li>
 <li><p>Cuda</p></li>
 <li><p>Rustc</p></li>
@@ -103,6 +104,26 @@ files</p></li>
 </div></blockquote>
 </li>
 <li><p>Add the bin folder of your installation to your PATH</p></li>
+</ol>
+</section>
+<section id="emcc">
+<h2>EMCC<a class="headerlink" href="#emcc" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Download emscripten using scoop</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">main</span><span class="o">/</span><span class="n">cuda</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Install and activate Emscripten</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">emsdk</span> <span class="n">install</span> <span class="n">latest</span>
+<span class="n">emsdk</span> <span class="n">activate</span> <span class="n">latest</span> <span class="o">--</span><span class="n">permanent</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ol>
 </section>
 <section id="dpc">
@@ -185,7 +206,6 @@ files</p></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Toolchains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sdks.html">SDK’s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="editor.html">Editor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extra.html">Extra</a></li>
 </ul>
 </li>
 </ul>

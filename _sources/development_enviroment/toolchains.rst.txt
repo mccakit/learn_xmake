@@ -5,6 +5,7 @@
 In this document, following toolchains will be used:
 
 -  LLVM
+-  EMCC
 -  DPC++
 -  Cuda
 -  Rustc
@@ -65,6 +66,23 @@ dependencies.
          files
 
 #. Add the bin folder of your installation to your PATH
+
+******
+ EMCC
+******
+
+#. Download emscripten using scoop
+
+      .. code::
+
+         scoop install main/cuda
+
+#. Install and activate Emscripten
+
+    .. code::
+
+        emsdk install latest
+        emsdk activate latest --permanent
 
 *******
  DPC++
