@@ -9,7 +9,7 @@ settings.
 
 #. Install Zed Editor
 
-    .. code::
+    .. code:: bash
 
         scoop install extras/zed
 
