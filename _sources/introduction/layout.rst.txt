@@ -27,8 +27,7 @@ Packaging
 
 In this section, I'll guide you through packaging libraries and
 consuming them, both locally and remotely. You'll learn how to integrate
-packages from other build systems, utilize system packages, and work
-with SDKs.
+packages from other build systems and utilize system packages.
 
 Toolchains
 ==========

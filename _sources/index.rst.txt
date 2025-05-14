@@ -10,3 +10,4 @@
    overview/index
    development_enviroment/index
    targets/index
+   packages/index

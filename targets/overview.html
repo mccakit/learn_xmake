@@ -35,8 +35,9 @@
             
   <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h1>
-<p>In XMake, targets are declared using the target() function. The general
-syntax is:</p>
+<p>In XMake, a target is a core unit of the build system that represents
+something you want to build, they are declared using the
+target() function. The general syntax is:</p>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">target</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
 <span class="w">    </span><span class="c1">--stuff</span>
 <span class="kr">end</span>
@@ -44,8 +45,9 @@ syntax is:</p>
 </div>
 <p>At build time, XMake compiles the specified targets and links them
 together as needed to produce the final output.</p>
-<p>Configuration is done by calling functions inside the <code class="docutils literal notranslate"><span class="pre">target</span></code> function,
-here are the essential configuration functions you’ll commonly use:</p>
+<p>Configuration is done by calling functions inside the <code class="docutils literal notranslate"><span class="pre">target</span></code>
+function, here are the essential configuration functions you’ll commonly
+use:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">set_kind()</span></code> set the target type</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">add_files()</span></code> add source files</p></li>
@@ -92,6 +94,7 @@ here are the essential configuration functions you’ll commonly use:</p>
 <li class="toctree-l2"><a class="reference internal" href="types.html">Types</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../packages/index.html">Packages</a></li>
 </ul>
 
 <div class="relations">
