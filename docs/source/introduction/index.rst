@@ -9,4 +9,4 @@
    purpose
    audience
    scope
-   guide
+   layout
