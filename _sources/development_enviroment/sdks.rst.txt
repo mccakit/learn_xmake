@@ -11,7 +11,7 @@ sysroot for cross compilation.
 
 #. Pull the Debian Image, Build a container then install ``g++``
 
-    .. code::
+    .. code:: bash
 
         docker pull debian:bookworm
         docker run -it --name=deb debian:bookworm
@@ -20,6 +20,6 @@ sysroot for cross compilation.
 
 #. Export the container as a .tar file and extract it as **admin**
 
-.. code::
+.. code:: bash
 
     docker export deb -o deb.tar
