@@ -10,4 +10,3 @@
    toolchains
    sdks
    editor
-   extra
