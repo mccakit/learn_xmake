@@ -8,6 +8,6 @@
 
    introduction/index
    overview/index
-   development_enviroment/index
+   enviroment/index
    targets/index
    packages/index

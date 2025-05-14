@@ -10,8 +10,8 @@ In this section, I'll explain the reasons why you should consider
 switching to XMake, and I'll also guide you through how to follow this
 tutorial effectively.
 
-Development Enviroment
-======================
+Enviroment
+==========
 
 In this section, I'll guide you through setting up a development
 environment using command-line tools with a text editor.

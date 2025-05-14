@@ -15,7 +15,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SDK’s" href="sdks.html" />
-    <link rel="prev" title="Prerequisites" href="prerequisites.html" />
+    <link rel="prev" title="Build Systems" href="build_systems.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -36,14 +36,6 @@
   <section id="toolchains">
 <h1>Toolchains<a class="headerlink" href="#toolchains" title="Link to this heading">¶</a></h1>
 <p>In this document, following toolchains will be used:</p>
-<ul class="simple">
-<li><p>LLVM</p></li>
-<li><p>EMCC</p></li>
-<li><p>DPC++</p></li>
-<li><p>Cuda</p></li>
-<li><p>Rustc</p></li>
-<li><p>Zig</p></li>
-</ul>
 <section id="llvm">
 <h2>LLVM<a class="headerlink" href="#llvm" title="Link to this heading">¶</a></h2>
 <p>To install LLVM with all available backends, you must compile it from
@@ -62,7 +54,6 @@ enable <em>ATL</em>, <em>MFC</em>, <em>CLI</em> support and Modules</p></li>
 <li><p>Install additional dependencies</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Install scoop by following instructions in this <a class="reference external" href="https://scoop.sh/">link</a></p></li>
 <li><p>Install cmake, python, make and git with <code class="docutils literal notranslate"><span class="pre">scoop</span> <span class="pre">install</span></code></p></li>
 </ol>
 </div></blockquote>
@@ -85,8 +76,7 @@ your llvm repository</p></li>
 <p>I recommend building clang, lld, clang-tools-extra, lldb,
 libcxx, libc and compiler-rt with exception handling,
 run-time type information and assertions enabled. For
-targets, I suggest building X86, ARM, RISC-V and
-WebAssembly.</p>
+targets, I suggest building X86, ARM and RISC-V</p>
 </div>
 </li>
 <li><p>Build and install LLVM with <code class="docutils literal notranslate"><span class="pre">ninja</span> <span class="pre">--build</span></code> and <code class="docutils literal notranslate"><span class="pre">`cmake</span>
@@ -111,15 +101,15 @@ files</p></li>
 <ol class="arabic">
 <li><p>Download emscripten using scoop</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">main</span><span class="o">/</span><span class="n">cuda</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/emscripten
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p>Install and activate Emscripten</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">emsdk</span> <span class="n">install</span> <span class="n">latest</span>
-<span class="n">emsdk</span> <span class="n">activate</span> <span class="n">latest</span> <span class="o">--</span><span class="n">permanent</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>emsdk<span class="w"> </span>install<span class="w"> </span>latest
+emsdk<span class="w"> </span>activate<span class="w"> </span>latest<span class="w"> </span>--permanent
 </pre></div>
 </div>
 </div></blockquote>
@@ -137,7 +127,7 @@ files</p></li>
 <ol class="arabic">
 <li><p>Download CUDA using scoop</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">main</span><span class="o">/</span><span class="n">cuda</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/cuda
 </pre></div>
 </div>
 </div></blockquote>
@@ -149,7 +139,7 @@ files</p></li>
 <ol class="arabic">
 <li><p>Download rustup using scoop</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">main</span><span class="o">/</span><span class="n">rustup</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/rustup
 </pre></div>
 </div>
 </div></blockquote>
@@ -159,10 +149,9 @@ files</p></li>
 <section id="zig">
 <h2>Zig<a class="headerlink" href="#zig" title="Link to this heading">¶</a></h2>
 <ol class="arabic">
-<li><p>Download zig and zls using scoop</p>
+<li><p>Download zig using scoop</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scoop</span> <span class="n">install</span> <span class="n">versions</span><span class="o">/</span><span class="n">zig</span><span class="o">-</span><span class="n">dev</span>
-<span class="n">scoop</span> <span class="n">install</span> <span class="n">versions</span><span class="o">/</span><span class="n">zls</span><span class="o">-</span><span class="n">dev</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>versions/zig-dev
 </pre></div>
 </div>
 </div></blockquote>
@@ -201,8 +190,9 @@ files</p></li>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Development Enviroment</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Enviroment</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build_systems.html">Build Systems</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Toolchains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sdks.html">SDK’s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="editor.html">Editor</a></li>
@@ -216,8 +206,8 @@ files</p></li>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">Development Enviroment</a><ul>
-      <li>Previous: <a href="prerequisites.html" title="previous chapter">Prerequisites</a></li>
+  <li><a href="index.html">Enviroment</a><ul>
+      <li>Previous: <a href="build_systems.html" title="previous chapter">Build Systems</a></li>
       <li>Next: <a href="sdks.html" title="next chapter">SDK’s</a></li>
   </ul></li>
   </ul></li>
@@ -243,7 +233,7 @@ files</p></li>
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
-      <a href="../_sources/development_enviroment/toolchains.rst.txt"
+      <a href="../_sources/enviroment/toolchains.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

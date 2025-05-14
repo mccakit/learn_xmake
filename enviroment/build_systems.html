@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Development Enviroment &#8212; Learn XMake 0.0.0 documentation</title>
+    <title>Build Systems &#8212; Learn XMake 0.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
@@ -14,8 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Prerequisites" href="prerequisites.html" />
-    <link rel="prev" title="Why switch?" href="../overview/switch.html" />
+    <link rel="next" title="Toolchains" href="toolchains.html" />
+    <link rel="prev" title="Prerequisites" href="prerequisites.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,17 +33,64 @@
 
           <div class="body" role="main">
             
-  <section id="development-enviroment">
-<h1>Development Enviroment<a class="headerlink" href="#development-enviroment" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toolchains.html">Toolchains</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sdks.html">SDK’s</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editor.html">Editor</a></li>
-</ul>
+  <section id="build-systems">
+<h1>Build Systems<a class="headerlink" href="#build-systems" title="Link to this heading">¶</a></h1>
+<p>In this document, following build systems will be used:</p>
+<section id="xmake">
+<h2>XMake<a class="headerlink" href="#xmake" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Install it using scoop</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/xmake
+</pre></div>
 </div>
+</div></blockquote>
+</li>
+<li><p>Update to PR branch</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xmake<span class="w"> </span>update<span class="w"> </span>-s<span class="w"> </span>github:Arthapz/xmake#cakit-branch
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="cmake">
+<h2>CMake<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Install it using scoop</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/cmake
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="make">
+<h2>Make<a class="headerlink" href="#make" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Install it using scoop</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/make
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="meson">
+<h2>Meson<a class="headerlink" href="#meson" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Install it using pip</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>meson
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
 </section>
 
 
@@ -76,8 +123,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Development Enviroment</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Enviroment</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Build Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="toolchains.html">Toolchains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sdks.html">SDK’s</a></li>
 <li class="toctree-l2"><a class="reference internal" href="editor.html">Editor</a></li>
@@ -91,8 +139,10 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../overview/switch.html" title="previous chapter">Why switch?</a></li>
-      <li>Next: <a href="prerequisites.html" title="next chapter">Prerequisites</a></li>
+  <li><a href="index.html">Enviroment</a><ul>
+      <li>Previous: <a href="prerequisites.html" title="previous chapter">Prerequisites</a></li>
+      <li>Next: <a href="toolchains.html" title="next chapter">Toolchains</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
@@ -116,7 +166,7 @@
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
-      <a href="../_sources/development_enviroment/index.rst.txt"
+      <a href="../_sources/enviroment/build_systems.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

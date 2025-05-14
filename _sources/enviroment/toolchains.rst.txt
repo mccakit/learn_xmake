@@ -4,13 +4,6 @@
 
 In this document, following toolchains will be used:
 
--  LLVM
--  EMCC
--  DPC++
--  Cuda
--  Rustc
--  Zig
-
 ******
  LLVM
 ******
@@ -28,8 +21,6 @@ dependencies.
 
 #. Install additional dependencies
 
-      #. Install scoop by following instructions in this `link
-         <https://scoop.sh/>`_
       #. Install cmake, python, make and git with ``scoop install``
 
 #. Build and Install LLVM
@@ -52,8 +43,7 @@ dependencies.
             I recommend building clang, lld, clang-tools-extra, lldb,
             libcxx, libc and compiler-rt with exception handling,
             run-time type information and assertions enabled. For
-            targets, I suggest building X86, ARM, RISC-V and
-            WebAssembly.
+            targets, I suggest building X86, ARM and RISC-V
 
       #. Build and install LLVM with ``ninja --build`` and ```cmake
          --install``
@@ -73,16 +63,16 @@ dependencies.
 
 #. Download emscripten using scoop
 
-      .. code::
+      .. code:: bash
 
-         scoop install main/cuda
+         scoop install main/emscripten
 
 #. Install and activate Emscripten
 
-    .. code::
+      .. code:: bash
 
-        emsdk install latest
-        emsdk activate latest --permanent
+         emsdk install latest
+         emsdk activate latest --permanent
 
 *******
  DPC++
@@ -97,7 +87,7 @@ dependencies.
 
 #. Download CUDA using scoop
 
-      .. code::
+      .. code:: bash
 
          scoop install main/cuda
 
@@ -107,7 +97,7 @@ dependencies.
 
 #. Download rustup using scoop
 
-      .. code::
+      .. code:: bash
 
          scoop install main/rustup
 
@@ -115,9 +105,8 @@ dependencies.
  Zig
 *****
 
-#. Download zig and zls using scoop
+#. Download zig using scoop
 
-      .. code::
+      .. code:: bash
 
          scoop install versions/zig-dev
-         scoop install versions/zls-dev
