@@ -9,3 +9,4 @@ To follow along with this document, you will need:
 #. Up-to-date GPU drivers that support Vulkan and/or SYCL.
 #. A CPU with virtualization support enabled (VT-x / AMD-V)
 #. A large SSD (1 TB or more recommended)
+#. Scoop package manager `(instructions) <https://scoop.sh/>`_
