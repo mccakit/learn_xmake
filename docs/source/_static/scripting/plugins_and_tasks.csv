@@ -1,0 +1,6 @@
+"Interface","Description"
+"task","Define plugins or tasks"
+"task_end","End defining plugins or tasks"
+"set_menu","Set Task Menu"
+"set_category","Set Task Category"
+"on_run","Set Task Run Script"

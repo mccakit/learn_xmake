@@ -7,7 +7,7 @@ pre-built or pre-configured resources—such as headers, libraries,
 tools, or assets—that can be automatically downloaded and seamlessly
 integrated into your project's build process.
 
-In XMake, you can package a target using the xmake package command. By
+In XMake, you can package a target by using the ``xmake package`` command. By
 providing the ``--format`` option, you can specify the package type,
 such as ``remote`` or ``local``.
 
