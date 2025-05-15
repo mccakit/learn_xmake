@@ -16,7 +16,6 @@ sysroot for cross compilation.
         docker pull debian:bookworm
         docker run -it --name=deb debian:bookworm
         apt update; apt install g++; exit
-        docker export deb -o deb.tar
 
 #. Export the container as a .tar file and extract it as **admin**
 
