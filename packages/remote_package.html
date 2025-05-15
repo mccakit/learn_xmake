@@ -15,7 +15,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Third Party Packages" href="third_party_packages.html" />
-    <link rel="prev" title="Local Package" href="local_package.html" />
+    <link rel="prev" title="Local Packages" href="local_package.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -35,6 +35,24 @@
             
   <section id="remote-package">
 <h1>Remote Package<a class="headerlink" href="#remote-package" title="Link to this heading">¶</a></h1>
+<p>Remote packages are <strong>build instructions</strong> used to compile a specific
+target. They are especially important in <em>cross-compilation</em> scenarios,
+where the build environment differs from the target system</p>
+<p>To create a remote package:</p>
+<ol class="arabic">
+<li><p>Put the source code containing the target definition into a
+repository</p></li>
+<li><p>Package a target with <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">package</span> <span class="pre">--format=remote</span></code>.</p></li>
+<li><p>Point to your source repository with <code class="docutils literal notranslate"><span class="pre">add_urls</span></code> by editing the
+generated package defintion file</p></li>
+<li><p>Copy the generated build/packages directory to the repository of your
+choice.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your repository should contain only the packages directory</p>
+</div>
+</li>
+</ol>
 </section>
 
 
@@ -71,10 +89,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../targets/index.html">Targets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Packages</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="local_package.html">Local Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_package.html">Local Packages</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Remote Package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="third_party_packages.html">Third Party Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xrepo.html">XRepo</a></li>
 </ul>
 </li>
 </ul>
@@ -84,7 +101,7 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">Packages</a><ul>
-      <li>Previous: <a href="local_package.html" title="previous chapter">Local Package</a></li>
+      <li>Previous: <a href="local_package.html" title="previous chapter">Local Packages</a></li>
       <li>Next: <a href="third_party_packages.html" title="next chapter">Third Party Packages</a></li>
   </ul></li>
   </ul></li>

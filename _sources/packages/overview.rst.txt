@@ -2,16 +2,20 @@
  Overview
 ##########
 
-A package in a build system context is indeed a collection of pre-built
-or pre-configured resources (headers, libraries, tools, assets, etc.)
-that can be downloaded and integrated into your project's build process
-automatically.
+In the context of a build system, a package refers to a collection of
+pre-built or pre-configured resources—such as headers, libraries,
+tools, or assets—that can be automatically downloaded and seamlessly
+integrated into your project's build process.
 
-In XMake, you can package a target using the command ``xmake package``.
-By specifying the ``--format`` option, you can choose the package type,
-such as ``remote`` or ``local``. To use packages in your project,
-declare them with ``add_requires``, and make them available to targets using
-``add_packages``
+In XMake, you can package a target using the xmake package command. By
+providing the ``--format`` option, you can specify the package type,
+such as ``remote`` or ``local``.
+
+To use packages in your project:
+
+#. Add the repository containing the package with ``add_repositories``.
+#. Declare the required packages using ``add_requires``.
+#. Make the packages available to your targets with ``add_packages``.
 
 .. code:: bash
 

@@ -14,7 +14,6 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="XRepo" href="xrepo.html" />
     <link rel="prev" title="Remote Package" href="remote_package.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -35,6 +34,62 @@
             
   <section id="third-party-packages">
 <h1>Third Party Packages<a class="headerlink" href="#third-party-packages" title="Link to this heading">¶</a></h1>
+<p>XMake supports importing and using packages defined in other build
+systems, such as CMake, allowing for seamless integration of external
+dependencies</p>
+<p>To consume a third party package:</p>
+<ol class="arabic simple">
+<li><p>Clone the source repository of the desired package</p></li>
+<li><p>Define a remote package using the <code class="docutils literal notranslate"><span class="pre">package</span></code> function and import the third-party build system using <code class="docutils literal notranslate"><span class="pre">import</span></code></p></li>
+<li><p>Create a configuration table to specify how you want the package to be installed</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">tool.install</span></code> to specify how the package should be built and installed</p></li>
+<li><p>In your project, declare the package with <code class="docutils literal notranslate"><span class="pre">add_requires</span></code></p></li>
+<li><p>Link the package to your target using <code class="docutils literal notranslate"><span class="pre">add_packages</span></code></p></li>
+</ol>
+<section id="cmake">
+<h2>CMake<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">add_deps</span><span class="p">(</span><span class="s2">&quot;cmake&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.cmake&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">cmake</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">,</span><span class="w"> </span><span class="nv">configs</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+<span class="nf">package_end</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="make">
+<h2>Make<a class="headerlink" href="#make" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="s2">&quot;linux&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;macosx&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.make&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">make</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="s2">&quot;windows&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
+<span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.nmake&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">nmake</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+<span class="nf">package_end</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="meson">
+<h2>Meson<a class="headerlink" href="#meson" title="Link to this heading">¶</a></h2>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">add_deps</span><span class="p">(</span><span class="s2">&quot;meson&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.meson&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">meson</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">,</span><span class="w"> </span><span class="nv">configs</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+<span class="nf">package_end</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -71,10 +126,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../targets/index.html">Targets</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Packages</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="local_package.html">Local Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_package.html">Local Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remote_package.html">Remote Package</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Third Party Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xrepo.html">XRepo</a></li>
 </ul>
 </li>
 </ul>
@@ -85,7 +139,6 @@
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">Packages</a><ul>
       <li>Previous: <a href="remote_package.html" title="previous chapter">Remote Package</a></li>
-      <li>Next: <a href="xrepo.html" title="next chapter">XRepo</a></li>
   </ul></li>
   </ul></li>
 </ul>
