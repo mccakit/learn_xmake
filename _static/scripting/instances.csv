@@ -1,0 +1,7 @@
+"Name","Description"
+"Package Instance","Manages external dependencies"
+"Target Instance","Defines a build target"
+"Option Instance","Controls build options"
+"Builtin Modules","Built-in utility modules"
+"Extension Modules","User-defined modules"
+"Native Modules","High-performance native modules"

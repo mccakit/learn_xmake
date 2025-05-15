@@ -12,3 +12,4 @@
    targets/index
    packages/index
    toolchains/index
+   scripting/index
