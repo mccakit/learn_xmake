@@ -11,3 +11,4 @@
    enviroment/index
    targets/index
    packages/index
+   toolchains/index
