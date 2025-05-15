@@ -14,8 +14,8 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Types" href="types.html" />
-    <link rel="prev" title="Targets" href="index.html" />
+    <link rel="next" title="Overview" href="configuration.html" />
+    <link rel="prev" title="Toolchains" href="index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -35,27 +35,29 @@
             
   <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h1>
-<p>In XMake, a target is a core unit of the build system that represents
-something you want to build, they are declared using the
-target() function. The general syntax is:</p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">target</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
-<span class="w">    </span><span class="c1">--stuff</span>
-<span class="kr">end</span>
+<p>A toolchain is a set of programming tools that work together to build
+software for a specific platform or environment</p>
+<p>In XMake, toolchains are defined using the <code class="docutils literal notranslate"><span class="pre">toolchain</span></code> function, where
+you specify the compiler, linker, and other tools using <code class="docutils literal notranslate"><span class="pre">set_toolset</span></code>.
+You can then load the necessary environment variables with custom
+tooling.</p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">toolchain</span><span class="p">(</span><span class="s2">&quot;myclang&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">set_toolset</span><span class="p">(</span><span class="s2">&quot;cc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;clang&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">set_toolset</span><span class="p">(</span><span class="s2">&quot;cxx&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;clang++&quot;</span><span class="p">)</span>
+<span class="nf">toolchain_end</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>At build time, XMake compiles the specified targets and links them
-together as needed to produce the final output.</p>
-<p>Configuration is done by calling functions inside the <code class="docutils literal notranslate"><span class="pre">target</span></code>
-function, here are the essential configuration functions you’ll commonly
-use:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">set_kind()</span></code> set the target type</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">add_files()</span></code> add source files</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">add_headerfiles()</span></code> add headerfiles</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">add_includedirs()</span></code> add includedirs</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">add_deps()</span></code> link a target</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">add_packages()</span></code> link a package</p></li>
-</ul>
+<p>Once defined, a toolchain can be applied at either the project or target
+level by calling <code class="docutils literal notranslate"><span class="pre">set_toolchains</span></code></p>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">set_toolchains</span><span class="p">(</span><span class="s2">&quot;llvm&quot;</span><span class="p">)</span>
+<span class="nf">target</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">     </span><span class="nf">set_toolchains</span><span class="p">(</span><span class="s2">&quot;msvc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also specify which toolchain to use from the command line with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xmake<span class="w"> </span>config<span class="w"> </span>--toolchain<span class="o">=</span>gcc
+</pre></div>
+</div>
 </section>
 
 
@@ -89,22 +91,22 @@ use:</p>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../enviroment/index.html">Enviroment</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Targets</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../targets/index.html">Targets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packages/index.html">Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Toolchains</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="types.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Overview</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../packages/index.html">Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../toolchains/index.html">Toolchains</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">Targets</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Targets</a></li>
-      <li>Next: <a href="types.html" title="next chapter">Types</a></li>
+  <li><a href="index.html">Toolchains</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Toolchains</a></li>
+      <li>Next: <a href="configuration.html" title="next chapter">Overview</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -129,7 +131,7 @@ use:</p>
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
-      <a href="../_sources/targets/overview.rst.txt"
+      <a href="../_sources/toolchains/overview.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
