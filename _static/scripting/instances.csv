@@ -1,4 +1,4 @@
-"Name","Description"
+"Instance","Description"
 "Package Instance","Manages external dependencies"
 "Target Instance","Defines a build target"
 "Option Instance","Controls build options"

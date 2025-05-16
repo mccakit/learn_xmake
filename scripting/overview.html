@@ -35,8 +35,10 @@
             
   <section id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h1>
-<p>In XMake, scripting is organized into instances and scopes, providing a
-structured way to define and control build behavior.</p>
+<p>In XMake, scripting is structured around instances, scopes, and modules,
+providing an organized way to define and control build behavior. You can
+also use extension modules by using <code class="docutils literal notranslate"><span class="pre">import</span></code> to introduce custom or alternative
+functionality.</p>
 <table class="docutils align-left" id="id1">
 <caption><span class="caption-text">Scopes</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
 <colgroup>
@@ -44,7 +46,7 @@ structured way to define and control build behavior.</p>
 <col style="width: 75.0%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Section</p></td>
+<tr class="row-odd"><td><p>Scope</p></td>
 <td><p>Description</p></td>
 </tr>
 <tr class="row-even"><td><p>Conditions</p></td>
@@ -89,7 +91,7 @@ structured way to define and control build behavior.</p>
 <col style="width: 75.0%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Name</p></td>
+<tr class="row-odd"><td><p>Instance</p></td>
 <td><p>Description</p></td>
 </tr>
 <tr class="row-even"><td><p>Package Instance</p></td>
@@ -109,6 +111,144 @@ structured way to define and control build behavior.</p>
 </tr>
 <tr class="row-odd"><td><p>Native Modules</p></td>
 <td><p>High-performance native modules</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-left" id="id3">
+<caption><span class="caption-text">Modules</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Module</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>import</p></td>
+<td><p>Import extension blocks</p></td>
+</tr>
+<tr class="row-odd"><td><p>inherit</p></td>
+<td><p>Import and inherit base class modules</p></td>
+</tr>
+<tr class="row-even"><td><p>try-catch-finally</p></td>
+<td><p>Exception capture</p></td>
+</tr>
+<tr class="row-odd"><td><p>pairs</p></td>
+<td><p>Traverse dictionaries</p></td>
+</tr>
+<tr class="row-even"><td><p>ipairs</p></td>
+<td><p>Traverse arrays</p></td>
+</tr>
+<tr class="row-odd"><td><p>print</p></td>
+<td><p>Print to terminal</p></td>
+</tr>
+<tr class="row-even"><td><p>printf</p></td>
+<td><p>No line print to terminal</p></td>
+</tr>
+<tr class="row-odd"><td><p>cprint</p></td>
+<td><p>Color print to terminal</p></td>
+</tr>
+<tr class="row-even"><td><p>cprintf</p></td>
+<td><p>No line color print to terminal</p></td>
+</tr>
+<tr class="row-odd"><td><p>format</p></td>
+<td><p>Format a string</p></td>
+</tr>
+<tr class="row-even"><td><p>vformat</p></td>
+<td><p>Format strings with built-in variable escaping</p></td>
+</tr>
+<tr class="row-odd"><td><p>raise</p></td>
+<td><p>Throw an abort</p></td>
+</tr>
+<tr class="row-even"><td><p>os</p></td>
+<td><p>The system operation module</p></td>
+</tr>
+<tr class="row-odd"><td><p>winos</p></td>
+<td><p>The Windows system operation module</p></td>
+</tr>
+<tr class="row-even"><td><p>macos</p></td>
+<td><p>The macOS system operation module</p></td>
+</tr>
+<tr class="row-odd"><td><p>linuxos</p></td>
+<td><p>The Linux system operation module</p></td>
+</tr>
+<tr class="row-even"><td><p>io</p></td>
+<td><p>IO operation module</p></td>
+</tr>
+<tr class="row-odd"><td><p>path</p></td>
+<td><p>Path operation module</p></td>
+</tr>
+<tr class="row-even"><td><p>table</p></td>
+<td><p>Lua table module</p></td>
+</tr>
+<tr class="row-odd"><td><p>string</p></td>
+<td><p>Lua string module</p></td>
+</tr>
+<tr class="row-even"><td><p>signal</p></td>
+<td><p>Signal registration module</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-left" id="id4">
+<caption><span class="caption-text">Extention Modules</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Extension Module</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>core.base.option</p></td>
+<td><p>Get the value of the xmake command parameter option</p></td>
+</tr>
+<tr class="row-odd"><td><p>core.base.global</p></td>
+<td><p>Get the configuration information of xmake global</p></td>
+</tr>
+<tr class="row-even"><td><p>core.base.task</p></td>
+<td><p>Task operations module</p></td>
+</tr>
+<tr class="row-odd"><td><p>core.base.json</p></td>
+<td><p>JSON module</p></td>
+</tr>
+<tr class="row-even"><td><p>core.base.semver</p></td>
+<td><p>Semantic versioning module</p></td>
+</tr>
+<tr class="row-odd"><td><p>core.tool.linker</p></td>
+<td><p>Linker related operation module</p></td>
+</tr>
+<tr class="row-even"><td><p>core.tool.compiler</p></td>
+<td><p>Compiler related operations module</p></td>
+</tr>
+<tr class="row-odd"><td><p>core.project.config</p></td>
+<td><p>Get the configuration information when the project is compiled</p></td>
+</tr>
+<tr class="row-even"><td><p>core.project.project</p></td>
+<td><p>Get some description information of the current project</p></td>
+</tr>
+<tr class="row-odd"><td><p>core.language.language</p></td>
+<td><p>Obtain information about the compiled language</p></td>
+</tr>
+<tr class="row-even"><td><p>lib.detect</p></td>
+<td><p>Probing module</p></td>
+</tr>
+<tr class="row-odd"><td><p>net.http</p></td>
+<td><p>HTTP module</p></td>
+</tr>
+<tr class="row-even"><td><p>privilege.sudo</p></td>
+<td><p>Run commands with sudo</p></td>
+</tr>
+<tr class="row-odd"><td><p>devel.git</p></td>
+<td><p>Run git commands</p></td>
+</tr>
+<tr class="row-even"><td><p>utils.archive</p></td>
+<td><p>Compress and decompress files</p></td>
+</tr>
+<tr class="row-odd"><td><p>utils.platform</p></td>
+<td><p>Module for platform-related auxiliary operation interfaces</p></td>
+</tr>
+<tr class="row-even"><td><p>cli</p></td>
+<td><p>Merge all C/C++ and header sources inside a given target into a single source file</p></td>
 </tr>
 </tbody>
 </table>
@@ -151,6 +291,9 @@ structured way to define and control build behavior.</p>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Scripting</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="scopes.html">Scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instances.html">Instances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extension_modules.html">Extension Modules</a></li>
 </ul>
 </li>
 </ul>

@@ -1,0 +1,6 @@
+"Interface","Description"
+"option:value","Get the value of the option"
+"option:name","Get the name of the option"
+"option:get","Get the values of the option by name"
+"option:set","Set the values of the option by name"
+"option:add", "Add to the values of the option by name"
