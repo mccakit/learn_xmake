@@ -1,4 +1,4 @@
-"Section","Description"
+"Scope","Description"
 "Conditions","Controls conditional logic in build scripts"
 "Global Interfaces","Applies configurations across the entire project"
 "Helper Interfaces","Provides utility functions for scripting"
