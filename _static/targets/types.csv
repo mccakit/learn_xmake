@@ -1,7 +1,0 @@
-"Value","Description"
-"phony","Non-buildable alias target"
-"binary","Executable program"
-"static","Static library"
-"shared","Shared (dynamic) library"
-"object","Compiled object files only"
-"headeronly","Headers only"
