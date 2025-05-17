@@ -33,11 +33,11 @@ function.
 
 .. code:: lua
 
-   package("foo")
+   package("foo", function()
        add_deps("cmake")
        set_sourcedir("foo")
        on_install(function (package)
            import("package.tools.cmake")
            cmake.install(package, {})
        end)
-   package_end()
+    end)
