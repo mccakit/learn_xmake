@@ -1,0 +1,5 @@
+"Interface","Description"
+"winos.version","Get windows system version"
+"winos.registry_keys","Get the list of registry keys"
+"winos.registry_values","Get a list of registry value names"
+"winos.registry_query","Get the registry value"

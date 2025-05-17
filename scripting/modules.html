@@ -14,7 +14,6 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Extension Modules" href="extension_modules.html" />
     <link rel="prev" title="Instances" href="instances.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -35,6 +34,609 @@
             
   <section id="modules">
 <h1>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h1>
+<section id="os">
+<h2>OS<a class="headerlink" href="#os" title="Link to this heading">¶</a></h2>
+<p>OS module provides interface with the operating system</p>
+<table class="docutils align-left" id="id1">
+<caption><span class="caption-text">OS Module</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Interface</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>os.cp</p></td>
+<td><p>Copy files or directories</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.mv</p></td>
+<td><p>Move Renamed File or Directory</p></td>
+</tr>
+<tr class="row-even"><td><p>os.rm</p></td>
+<td><p>Delete files or directory tree</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.trycp</p></td>
+<td><p>Try copying files or directories</p></td>
+</tr>
+<tr class="row-even"><td><p>os.trymv</p></td>
+<td><p>Try moving the renamed file or directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.tryrm</p></td>
+<td><p>Try deleting a file or directory tree</p></td>
+</tr>
+<tr class="row-even"><td><p>os.cd</p></td>
+<td><p>Go to the specified directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.rmdir</p></td>
+<td><p>Delete Directory Tree</p></td>
+</tr>
+<tr class="row-even"><td><p>os.mkdir</p></td>
+<td><p>Create the specified directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.isdir</p></td>
+<td><p>Determine if the directory exists</p></td>
+</tr>
+<tr class="row-even"><td><p>os.isfile</p></td>
+<td><p>Determine if the file exists</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.exists</p></td>
+<td><p>Determine if a file or directory exists</p></td>
+</tr>
+<tr class="row-even"><td><p>os.dirs</p></td>
+<td><p>Traversing to get all directories under the specified directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.files</p></td>
+<td><p>Traversing to get all the files in the specified directory</p></td>
+</tr>
+<tr class="row-even"><td><p>os.filedirs</p></td>
+<td><p>Traversing to get all files or directories under the specified directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.exit</p></td>
+<td><p>Exit the program</p></td>
+</tr>
+<tr class="row-even"><td><p>os.isexec</p></td>
+<td><p>Test if a file is executable</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.run</p></td>
+<td><p>Quiet running program</p></td>
+</tr>
+<tr class="row-even"><td><p>os.runv</p></td>
+<td><p>Quiet running program with parameter list</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.exec</p></td>
+<td><p>Evoke Run Program</p></td>
+</tr>
+<tr class="row-even"><td><p>os.execv</p></td>
+<td><p>Echo running program with parameter list</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.iorun</p></td>
+<td><p>Run and get the program output</p></td>
+</tr>
+<tr class="row-even"><td><p>os.iorunv</p></td>
+<td><p>Run and get the program output with parameter list</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.tmpdir</p></td>
+<td><p>Get Temp directory path</p></td>
+</tr>
+<tr class="row-even"><td><p>os.tmpfile</p></td>
+<td><p>Get Temporary File Path</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.curdir</p></td>
+<td><p>Get current directory path</p></td>
+</tr>
+<tr class="row-even"><td><p>os.filesize</p></td>
+<td><p>Get File Size</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.scriptdir</p></td>
+<td><p>Get script directory path</p></td>
+</tr>
+<tr class="row-even"><td><p>os.programdir</p></td>
+<td><p>Get xmake install main program script directory</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.programfile</p></td>
+<td><p>Get the path of the xmake executable</p></td>
+</tr>
+<tr class="row-even"><td><p>os.projectdir</p></td>
+<td><p>Get Project Home</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.arch</p></td>
+<td><p>Get Current System Architecture</p></td>
+</tr>
+<tr class="row-even"><td><p>os.host</p></td>
+<td><p>Get Current Host System</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.subhost</p></td>
+<td><p>Get Subsystem host, e.g. msys, cygwin on windows</p></td>
+</tr>
+<tr class="row-even"><td><p>os.subarch</p></td>
+<td><p>Get Subsystem host architecture</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.is_host</p></td>
+<td><p>Test if a given host is the current</p></td>
+</tr>
+<tr class="row-even"><td><p>os.is_arch</p></td>
+<td><p>Test if a given arch is the current</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.is_subhost</p></td>
+<td><p>Test if a given sub host is the current</p></td>
+</tr>
+<tr class="row-even"><td><p>os.is_subarch</p></td>
+<td><p>Test if a given sub arch is the current</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.ln</p></td>
+<td><p>Link file or directory to the new symfile</p></td>
+</tr>
+<tr class="row-even"><td><p>os.readlink</p></td>
+<td><p>Read the content of a symlink</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.raise</p></td>
+<td><p>Raise an exception and abort the current script</p></td>
+</tr>
+<tr class="row-even"><td><p>os.raiselevel</p></td>
+<td><p>Raise an exception and abort the current script</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.features</p></td>
+<td><p>Get features</p></td>
+</tr>
+<tr class="row-even"><td><p>os.getenvs</p></td>
+<td><p>Get all current environment variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.setenvs</p></td>
+<td><p>Set environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>os.addenvs</p></td>
+<td><p>Add environment variables to current envs</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.joinenvs</p></td>
+<td><p>Join environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>os.getenv</p></td>
+<td><p>Get Environment Variables</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.setenv</p></td>
+<td><p>Setting environment variables</p></td>
+</tr>
+<tr class="row-even"><td><p>os.addenv</p></td>
+<td><p>Add values to one environment variable</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.setenvp</p></td>
+<td><p>Setting environment variables with a given separator</p></td>
+</tr>
+<tr class="row-even"><td><p>os.addenvp</p></td>
+<td><p>Add values to one environment variable with a given separator</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.workingdir</p></td>
+<td><p>Get the working directory</p></td>
+</tr>
+<tr class="row-even"><td><p>os.isroot</p></td>
+<td><p>Test if xmake is running as root</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.fscase</p></td>
+<td><p>Test if the os has a case sensitive filesystem</p></td>
+</tr>
+<tr class="row-even"><td><p>os.term</p></td>
+<td><p>Get current terminal</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.shell</p></td>
+<td><p>Get current shell</p></td>
+</tr>
+<tr class="row-even"><td><p>os.cpuinfo</p></td>
+<td><p>Get cpu information</p></td>
+</tr>
+<tr class="row-odd"><td><p>os.meminfo</p></td>
+<td><p>Get memory information</p></td>
+</tr>
+<tr class="row-even"><td><p>os.default_njob</p></td>
+<td><p>Get default paralled jobs</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="io">
+<h2>IO<a class="headerlink" href="#io" title="Link to this heading">¶</a></h2>
+<p>IO module provides easy-to-use interfaces.</p>
+<table class="docutils align-left" id="id2">
+<caption><span class="caption-text">IO Module</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Interface</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>io.open</p></td>
+<td><p>Open file for reading and writing</p></td>
+</tr>
+<tr class="row-odd"><td><p>io.load</p></td>
+<td><p>De-serialize all table contents from the specified path file</p></td>
+</tr>
+<tr class="row-even"><td><p>io.save</p></td>
+<td><p>Serialize all table contents to the specified path file</p></td>
+</tr>
+<tr class="row-odd"><td><p>io.readfile</p></td>
+<td><p>Read everything from the specified path file</p></td>
+</tr>
+<tr class="row-even"><td><p>io.writefile</p></td>
+<td><p>Write everything to the specified path file</p></td>
+</tr>
+<tr class="row-odd"><td><p>io.gsub</p></td>
+<td><p>Full text replaces the contents of the specified path file</p></td>
+</tr>
+<tr class="row-even"><td><p>io.tail</p></td>
+<td><p>Read and display the tail of the file</p></td>
+</tr>
+<tr class="row-odd"><td><p>io.cat</p></td>
+<td><p>Read and display all contents of a file</p></td>
+</tr>
+<tr class="row-even"><td><p>io.print</p></td>
+<td><p>Formatting output with a line feed to a file</p></td>
+</tr>
+<tr class="row-odd"><td><p>io.printf</p></td>
+<td><p>No line formatted output to file</p></td>
+</tr>
+<tr class="row-even"><td><p>io.lines</p></td>
+<td><p>Read all lines from file</p></td>
+</tr>
+<tr class="row-odd"><td><p>io.stdfile</p></td>
+<td><p>Get std file</p></td>
+</tr>
+<tr class="row-even"><td><p>io.openlock</p></td>
+<td><p>Open a lock of a file</p></td>
+</tr>
+<tr class="row-odd"><td><p>io.replace</p></td>
+<td><p>Replace text of the given file and return the replaced data</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="path">
+<h2>Path<a class="headerlink" href="#path" title="Link to this heading">¶</a></h2>
+<p>Path module implements cross-platform path operations</p>
+<table class="docutils align-left" id="id3">
+<caption><span class="caption-text">Path Module</span><a class="headerlink" href="#id3" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Interface</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>path.new</p></td>
+<td><p>Create a new path instance</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.join</p></td>
+<td><p>Stitching Path</p></td>
+</tr>
+<tr class="row-even"><td><p>path.translate</p></td>
+<td><p>Convert path to the path style of the current platform</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.basename</p></td>
+<td><p>Get the file name with no suffix at the end</p></td>
+</tr>
+<tr class="row-even"><td><p>path.filename</p></td>
+<td><p>Get the file name with the last suffix of the path</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.extension</p></td>
+<td><p>Get the suffix of the path</p></td>
+</tr>
+<tr class="row-even"><td><p>path.directory</p></td>
+<td><p>Get the directory name of the path</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.relative</p></td>
+<td><p>Convert to relative path</p></td>
+</tr>
+<tr class="row-even"><td><p>path.absolute</p></td>
+<td><p>Convert to absolute path</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.is_absolute</p></td>
+<td><p>Determine if it is an absolute path</p></td>
+</tr>
+<tr class="row-even"><td><p>path.split</p></td>
+<td><p>Split by the separator</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.sep</p></td>
+<td><p>Get the separator character</p></td>
+</tr>
+<tr class="row-even"><td><p>path.islastsep</p></td>
+<td><p>Get if the last character is a separator</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.splitenv</p></td>
+<td><p>Split a environment variable value of an array of pathes</p></td>
+</tr>
+<tr class="row-even"><td><p>path.joinenv</p></td>
+<td><p>Concat environment variable with environment separator</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.envsep</p></td>
+<td><p>Get the path seperator of environment variable</p></td>
+</tr>
+<tr class="row-even"><td><p>path.cygwin_path</p></td>
+<td><p>Get the converted MSYS2/Cygwin style path</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.pattern</p></td>
+<td><p>Convert a path pattern to a lua pattern</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="table">
+<h2>Table<a class="headerlink" href="#table" title="Link to this heading">¶</a></h2>
+<p>Provides table manipulation functions, extended with additional
+utilities in XMake.</p>
+<table class="docutils align-left" id="id4">
+<caption><span class="caption-text">Table Module</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Interface</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>path.new</p></td>
+<td><p>Create a new path instance</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.join</p></td>
+<td><p>Stitching Path</p></td>
+</tr>
+<tr class="row-even"><td><p>path.translate</p></td>
+<td><p>Convert path to the path style of the current platform</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.basename</p></td>
+<td><p>Get the file name with no suffix at the end</p></td>
+</tr>
+<tr class="row-even"><td><p>path.filename</p></td>
+<td><p>Get the file name with the last suffix of the path</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.extension</p></td>
+<td><p>Get the suffix of the path</p></td>
+</tr>
+<tr class="row-even"><td><p>path.directory</p></td>
+<td><p>Get the directory name of the path</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.relative</p></td>
+<td><p>Convert to relative path</p></td>
+</tr>
+<tr class="row-even"><td><p>path.absolute</p></td>
+<td><p>Convert to absolute path</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.is_absolute</p></td>
+<td><p>Determine if it is an absolute path</p></td>
+</tr>
+<tr class="row-even"><td><p>path.split</p></td>
+<td><p>Split by the separator</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.sep</p></td>
+<td><p>Get the separator character</p></td>
+</tr>
+<tr class="row-even"><td><p>path.islastsep</p></td>
+<td><p>Get if the last character is a separator</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.splitenv</p></td>
+<td><p>Split a environment variable value of an array of pathes</p></td>
+</tr>
+<tr class="row-even"><td><p>path.joinenv</p></td>
+<td><p>Concat environment variable with environment separator</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.envsep</p></td>
+<td><p>Get the path seperator of environment variable</p></td>
+</tr>
+<tr class="row-even"><td><p>path.cygwin_path</p></td>
+<td><p>Get the converted MSYS2/Cygwin style path</p></td>
+</tr>
+<tr class="row-odd"><td><p>path.pattern</p></td>
+<td><p>Convert a path pattern to a lua pattern</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="string">
+<h2>String<a class="headerlink" href="#string" title="Link to this heading">¶</a></h2>
+<p>Provides string manipulation functions, extended with additional
+utilities in XMake.</p>
+<table class="docutils align-left" id="id5">
+<caption><span class="caption-text">String Module</span><a class="headerlink" href="#id5" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>string.byte</p></td>
+<td><p>Returns the internal numerical codes of characters in a string substring.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.char</p></td>
+<td><p>Receives integers and returns a string with characters corresponding to those codes.</p></td>
+</tr>
+<tr class="row-odd"><td><p>string.dump</p></td>
+<td><p>Returns a binary representation of a given function.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.find</p></td>
+<td><p>Finds the first match of a pattern in a string, returning start and end indices.</p></td>
+</tr>
+<tr class="row-odd"><td><p>string.format</p></td>
+<td><p>Returns a formatted string following C’s printf-like formatting rules.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.gmatch</p></td>
+<td><p>Returns an iterator that iterates over all matches of a pattern in a string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>string.gsub</p></td>
+<td><p>Returns a copy of the string with occurrences of a pattern replaced.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.len</p></td>
+<td><p>Returns the length of a string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>string.lower</p></td>
+<td><p>Returns a copy of the string with all uppercase letters changed to lowercase.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.match</p></td>
+<td><p>Looks for the first match of a pattern and returns captured values.</p></td>
+</tr>
+<tr class="row-odd"><td><p>string.rep</p></td>
+<td><p>Returns a string repeated n times.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.reverse</p></td>
+<td><p>Returns the string reversed.</p></td>
+</tr>
+<tr class="row-odd"><td><p>string.sub</p></td>
+<td><p>Returns a substring between two indices.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.upper</p></td>
+<td><p>Returns a copy of the string with all lowercase letters changed to uppercase.</p></td>
+</tr>
+<tr class="row-odd"><td><p>string.startswith</p></td>
+<td><p>Determines if the string starts with a given substring.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.endswith</p></td>
+<td><p>Determines if the string ends with a given substring.</p></td>
+</tr>
+<tr class="row-odd"><td><p>string.split</p></td>
+<td><p>Splits a string by a pattern.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.trim</p></td>
+<td><p>Removes whitespace from both ends of a string.</p></td>
+</tr>
+<tr class="row-odd"><td><p>string.ltrim</p></td>
+<td><p>Removes whitespace from the left side of a string.</p></td>
+</tr>
+<tr class="row-even"><td><p>string.rtrim</p></td>
+<td><p>Removes whitespace from the right side of a string.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="signal">
+<h2>Signal<a class="headerlink" href="#signal" title="Link to this heading">¶</a></h2>
+<p>XMake signal registration interface</p>
+<table class="docutils align-left" id="id6">
+<caption><span class="caption-text">Signal Module</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Interface</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>signal.register</p></td>
+<td><p>Register signal handler</p></td>
+</tr>
+<tr class="row-odd"><td><p>signal.ignore</p></td>
+<td><p>Ignore a signal</p></td>
+</tr>
+<tr class="row-even"><td><p>signal.reset</p></td>
+<td><p>Reset a signal</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="coroutines">
+<h2>Coroutines<a class="headerlink" href="#coroutines" title="Link to this heading">¶</a></h2>
+<p>Couroutine operations module</p>
+<table class="docutils align-left" id="id7">
+<caption><span class="caption-text">Coroutines Module</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Interface</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>coroutine.create</p></td>
+<td><p>Create a new coroutine.</p></td>
+</tr>
+<tr class="row-odd"><td><p>coroutine.resume</p></td>
+<td><p>Start or resume a coroutine.</p></td>
+</tr>
+<tr class="row-even"><td><p>coroutine.running</p></td>
+<td><p>Get the running coroutine or nil.</p></td>
+</tr>
+<tr class="row-odd"><td><p>coroutine.status</p></td>
+<td><p>Get the coroutine status.</p></td>
+</tr>
+<tr class="row-even"><td><p>coroutine.wrap</p></td>
+<td><p>Create and wrap a coroutine in a function.</p></td>
+</tr>
+<tr class="row-odd"><td><p>coroutine.yield</p></td>
+<td><p>Suspend coroutine execution.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="winos">
+<h2>WinOS<a class="headerlink" href="#winos" title="Link to this heading">¶</a></h2>
+<p>The windows system operation module</p>
+<table class="docutils align-left" id="id8">
+<caption><span class="caption-text">WİnOS Module</span><a class="headerlink" href="#id8" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Interface</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>winos.version</p></td>
+<td><p>Get windows system version</p></td>
+</tr>
+<tr class="row-odd"><td><p>winos.registry_keys</p></td>
+<td><p>Get the list of registry keys</p></td>
+</tr>
+<tr class="row-even"><td><p>winos.registry_values</p></td>
+<td><p>Get a list of registry value names</p></td>
+</tr>
+<tr class="row-odd"><td><p>winos.registry_query</p></td>
+<td><p>Get the registry value</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="macos">
+<h2>MacOS<a class="headerlink" href="#macos" title="Link to this heading">¶</a></h2>
+<p>The macOS system operation module</p>
+<table class="docutils align-left" id="id9">
+<caption><span class="caption-text">MacOS Module</span><a class="headerlink" href="#id9" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Interface”</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>macos.version</p></td>
+<td><p>Get macOS system version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="linuxos">
+<h2>LinuxOS<a class="headerlink" href="#linuxos" title="Link to this heading">¶</a></h2>
+<p>The linux system operation module</p>
+<table class="docutils align-left" id="id10">
+<caption><span class="caption-text">LinuxOS Module</span><a class="headerlink" href="#id10" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Interface</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>linuxos.name</p></td>
+<td><p>Get the linux system release name</p></td>
+</tr>
+<tr class="row-odd"><td><p>linuxos.version</p></td>
+<td><p>Get linux system version</p></td>
+</tr>
+<tr class="row-even"><td><p>linuxos.kernelver</p></td>
+<td><p>Get linux system kernel version</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
 
@@ -76,7 +678,6 @@
 <li class="toctree-l2"><a class="reference internal" href="scopes.html">Scopes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="instances.html">Instances</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extension_modules.html">Extension Modules</a></li>
 </ul>
 </li>
 </ul>
@@ -87,7 +688,6 @@
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html">Scripting</a><ul>
       <li>Previous: <a href="instances.html" title="previous chapter">Instances</a></li>
-      <li>Next: <a href="extension_modules.html" title="next chapter">Extension Modules</a></li>
   </ul></li>
   </ul></li>
 </ul>
