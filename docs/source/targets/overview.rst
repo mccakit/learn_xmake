@@ -25,3 +25,6 @@ use:
 -  ``add_includedirs()`` add includedirs
 -  ``add_deps()`` link a target
 -  ``add_packages()`` link a package
+-  ``add_syslinks()`` link to system libraries
+-  ``add_cxflags()`` add C/C++ flags
+-  ``add_ldflags()`` add linker flags
