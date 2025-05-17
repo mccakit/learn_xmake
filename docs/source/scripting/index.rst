@@ -10,4 +10,3 @@
    scopes
    instances
    modules
-   extension_modules

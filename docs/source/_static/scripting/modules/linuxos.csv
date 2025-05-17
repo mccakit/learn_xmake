@@ -1,0 +1,4 @@
+"Interface","Description"
+"linuxos.name","Get the linux system release name"
+"linuxos.version","Get linux system version"
+"linuxos.kernelver","Get linux system kernel version"

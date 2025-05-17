@@ -1,0 +1,4 @@
+"Interface","Description"
+"signal.register","Register signal handler"
+"signal.ignore","Ignore a signal"
+"signal.reset","Reset a signal"

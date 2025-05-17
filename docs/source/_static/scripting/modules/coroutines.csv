@@ -1,0 +1,7 @@
+"Interface","Description"
+"coroutine.create","Create a new coroutine."
+"coroutine.resume","Start or resume a coroutine."
+"coroutine.running","Get the running coroutine or nil."
+"coroutine.status","Get the coroutine status."
+"coroutine.wrap","Create and wrap a coroutine in a function."
+"coroutine.yield","Suspend coroutine execution."
