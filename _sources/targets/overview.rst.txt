@@ -8,9 +8,9 @@ target() function. The general syntax is:
 
 .. code:: lua
 
-   target("name") do
+   target("name", function()
        --stuff
-   end
+   end)
 
 At build time, XMake compiles the specified targets and links them
 together as needed to produce the final output.

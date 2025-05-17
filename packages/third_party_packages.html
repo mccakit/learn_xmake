@@ -41,15 +41,18 @@ dependencies</p>
 <p>To consume a third party package:</p>
 <ol class="arabic simple">
 <li><p>Clone the source repository of the desired package</p></li>
-<li><p>Define a remote package using the <code class="docutils literal notranslate"><span class="pre">package</span></code> function and import the third-party build system using <code class="docutils literal notranslate"><span class="pre">import</span></code></p></li>
-<li><p>Create a configuration table to specify how you want the package to be installed</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">tool.install</span></code> to specify how the package should be built and installed</p></li>
+<li><p>Define a remote package using the <code class="docutils literal notranslate"><span class="pre">package</span></code> function and import the
+third-party build system using <code class="docutils literal notranslate"><span class="pre">import</span></code></p></li>
+<li><p>Create a configuration table to specify how you want the package to
+be installed</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">tool.install</span></code> to specify how the package should be built and
+installed</p></li>
 <li><p>In your project, declare the package with <code class="docutils literal notranslate"><span class="pre">add_requires</span></code></p></li>
 <li><p>Link the package to your target using <code class="docutils literal notranslate"><span class="pre">add_packages</span></code></p></li>
 </ol>
 <section id="cmake">
 <h2>CMake<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h2>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
 <span class="w">    </span><span class="nf">add_deps</span><span class="p">(</span><span class="s2">&quot;cmake&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
@@ -57,13 +60,13 @@ dependencies</p>
 <span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.cmake&quot;</span><span class="p">)</span>
 <span class="w">        </span><span class="nv">cmake</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">,</span><span class="w"> </span><span class="nv">configs</span><span class="p">)</span>
 <span class="w">    </span><span class="kr">end</span><span class="p">)</span>
-<span class="nf">package_end</span><span class="p">()</span>
+<span class="w"> </span><span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="make">
 <h2>Make<a class="headerlink" href="#make" title="Link to this heading">¶</a></h2>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
 <span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="s2">&quot;linux&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;macosx&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
 <span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.make&quot;</span><span class="p">)</span>
@@ -73,13 +76,13 @@ dependencies</p>
 <span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.nmake&quot;</span><span class="p">)</span>
 <span class="w">        </span><span class="nv">nmake</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
 <span class="w">    </span><span class="kr">end</span><span class="p">)</span>
-<span class="nf">package_end</span><span class="p">()</span>
+<span class="w"> </span><span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="meson">
 <h2>Meson<a class="headerlink" href="#meson" title="Link to this heading">¶</a></h2>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
 <span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">add_deps</span><span class="p">(</span><span class="s2">&quot;meson&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
@@ -87,7 +90,7 @@ dependencies</p>
 <span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.meson&quot;</span><span class="p">)</span>
 <span class="w">        </span><span class="nv">meson</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">,</span><span class="w"> </span><span class="nv">configs</span><span class="p">)</span>
 <span class="w">    </span><span class="kr">end</span><span class="p">)</span>
-<span class="nf">package_end</span><span class="p">()</span>
+<span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

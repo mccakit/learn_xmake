@@ -12,10 +12,10 @@ tooling.
 
 .. code:: lua
 
-   toolchain("myclang")
+   toolchain("myclang", function()
        set_toolset("cc", "clang")
        set_toolset("cxx", "clang++")
-   toolchain_end()
+    end)
 
 Once defined, a toolchain can be applied at either the project or target
 level by calling ``set_toolchains``
@@ -23,11 +23,11 @@ level by calling ``set_toolchains``
 .. code:: lua
 
    set_toolchains("llvm")
-   target("hi") do
+   target("hi")
         set_toolchains("msvc")
 
 You can also specify which toolchain to use from the command line with:
 
 .. code:: bash
 
-    xmake config --toolchain=gcc
+   xmake config --toolchain=gcc

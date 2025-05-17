@@ -59,14 +59,14 @@ such as <code class="docutils literal notranslate"><span class="pre">remote</spa
 systems to leverage a wide range of existing packages. This is done by
 importing the appropriate extension and calling its <code class="docutils literal notranslate"><span class="pre">install</span></code>
 function.</p>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
 <span class="w">    </span><span class="nf">add_deps</span><span class="p">(</span><span class="s2">&quot;cmake&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
 <span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.cmake&quot;</span><span class="p">)</span>
 <span class="w">        </span><span class="nv">cmake</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">,</span><span class="w"> </span><span class="p">{})</span>
 <span class="w">    </span><span class="kr">end</span><span class="p">)</span>
-<span class="nf">package_end</span><span class="p">()</span>
+<span class="w"> </span><span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

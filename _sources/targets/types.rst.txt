@@ -14,9 +14,9 @@ Here is a basic example:
 
 .. code:: lua
 
-   target("static_lib") do
+   target("static_lib",function()
        set_kind("static")
        add_files("src/static_lib/lib/*.cpp")
        add_headerfiles("src/static_lib/inc/*.hpp")
        add_includedirs("src/static_lib/inc", {public = true})
-   end
+   end)
