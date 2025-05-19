@@ -22,10 +22,7 @@ level by calling ``set_toolchains``
 
 .. code:: lua
 
-   set_toolchains("llvm")
-   target("llvm_target", function()
-   end)
-   target("msvc_target", function()
+   target("foo", function()
         set_toolchains("msvc")
    end)
 
