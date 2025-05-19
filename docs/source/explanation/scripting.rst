@@ -1,6 +1,6 @@
-##########
- Overview
-##########
+###########
+ Scripting
+###########
 
 In XMake, scripting is structured around instances, scopes, and modules,
 providing an organized way to define and control build behavior.

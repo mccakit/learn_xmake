@@ -1,10 +1,10 @@
-##########
- Overview
-##########
+#########
+ Targets
+#########
 
-In XMake, a target is a core unit of the build system that represents
-something you want to build, they are declared using the
-target() function. The general syntax is:
+In XMake, a target represents something you want to build. You declare
+targets using the ``target`` function. The general syntax looks like
+this:
 
 .. code:: lua
 
@@ -15,9 +15,8 @@ target() function. The general syntax is:
 At build time, XMake compiles the specified targets and links them
 together as needed to produce the final output.
 
-Configuration is done by calling functions inside the ``target``
-function, here are the essential configuration functions you'll commonly
-use:
+You configure a target by calling functions inside the target block.
+Here are the essential configuration functions you'll typically use:
 
 -  ``set_kind()`` set the target type
 -  ``add_files()`` add source files
