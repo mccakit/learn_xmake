@@ -7,6 +7,3 @@
    :caption: Contents:
 
    overview
-   scopes
-   instances
-   modules

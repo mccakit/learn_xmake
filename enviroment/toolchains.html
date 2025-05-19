@@ -35,7 +35,41 @@
             
   <section id="toolchains">
 <h1>Toolchains<a class="headerlink" href="#toolchains" title="Link to this heading">¶</a></h1>
-<p>In this document, following toolchains will be used:</p>
+<p>This document uses the following toolchains:</p>
+<table class="docutils align-left" id="id1">
+<caption><span class="caption-text">Toolchains</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 66.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Toolchain</p></td>
+<td><p>Installation Method</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>LLVM</p></td>
+<td><p>Build from source</p></td>
+<td><p>A versatile compiler infrastructure supporting multiple CPU architectures; requires Visual Studio on Windows for building</p></td>
+</tr>
+<tr class="row-odd"><td><p>EMCC</p></td>
+<td><p>Scoop</p></td>
+<td><p>Emscripten compiler that translates C/C++ code into WebAssembly and JavaScript for web deployment</p></td>
+</tr>
+<tr class="row-even"><td><p>DPC++</p></td>
+<td><p>Installer</p></td>
+<td><p>Data Parallel C++ compiler implementing SYCL standard for heterogeneous parallel programming across CPUs, GPUs, and FPGAs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rustc</p></td>
+<td><p>Scoop</p></td>
+<td><p>Official compiler for the Rust programming language, providing memory-safe and fast system-level code generation</p></td>
+</tr>
+<tr class="row-even"><td><p>Zig</p></td>
+<td><p>Scoop</p></td>
+<td><p>A low-level programming language and toolchain focused on simplicity, performance, and safety with manual memory management</p></td>
+</tr>
+</tbody>
+</table>
 <section id="llvm">
 <h2>LLVM<a class="headerlink" href="#llvm" title="Link to this heading">¶</a></h2>
 <p>To install LLVM with all available backends, you must compile it from
@@ -53,67 +87,46 @@ enable <em>ATL</em>, <em>MFC</em>, <em>CLI</em> support and Modules</p></li>
 </li>
 <li><p>Install additional dependencies</p>
 <blockquote>
-<div><ol class="arabic simple">
-<li><p>Install cmake, python, make and git with <code class="docutils literal notranslate"><span class="pre">scoop</span> <span class="pre">install</span></code></p></li>
-</ol>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>python<span class="w"> </span>git
+</pre></div>
+</div>
 </div></blockquote>
 </li>
-<li><p>Build and Install LLVM</p>
+<li><p>Build and Install LLVM in “x64 Native Tools Command Prompt”</p>
 <blockquote>
 <div><ol class="arabic">
 <li><p>Clone the LLVM repository. I recommend using <a class="reference external" href="https://github.com/tcottin/llvm-project">this PR branch</a> as it enables
 Doxygen-style formatting on hover.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Don’t forget to switch to <code class="docutils literal notranslate"><span class="pre">clangd-doxygen-parser</span></code> branch</p>
-</div>
-</li>
-<li><p>Open the x64 Native Tools Command Prompt and navigate to to
-your llvm repository</p></li>
-<li><p>Create build configuation file with <code class="docutils literal notranslate"><span class="pre">cmake</span></code></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>I recommend building clang, lld, clang-tools-extra, lldb,
-libcxx, libc and compiler-rt with exception handling,
-run-time type information and assertions enabled. For
-targets, I suggest building X86, ARM and RISC-V</p>
-</div>
-</li>
-<li><p>Build and install LLVM with <code class="docutils literal notranslate"><span class="pre">ninja</span> <span class="pre">--build</span></code> and <code class="docutils literal notranslate"><span class="pre">`cmake</span>
-<span class="pre">--install</span></code></p></li>
-</ol>
-</div></blockquote>
-</li>
-<li><p>Patch LLVM installation so C++ Modules work</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Clone this <a class="reference external" href="https://github.com/mccakit/xmake_llvm_patch">repo</a> that contains
-patch files for <code class="docutils literal notranslate"><span class="pre">llvm\share\libc++\v1\std</span></code> just override the
-files</p></li>
-</ol>
-</div></blockquote>
-</li>
-<li><p>Add the bin folder of your installation to your PATH</p></li>
-</ol>
-</section>
-<section id="emcc">
-<h2>EMCC<a class="headerlink" href="#emcc" title="Link to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>Download emscripten using scoop</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/emscripten
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>git@github.com:tcottin/llvm-project.git
+<span class="nb">cd</span><span class="w"> </span>llvm-project
+git<span class="w"> </span>switch<span class="w"> </span>clangd-doxygen-parser
 </pre></div>
 </div>
-</div></blockquote>
 </li>
-<li><p>Install and activate Emscripten</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>emsdk<span class="w"> </span>install<span class="w"> </span>latest
-emsdk<span class="w"> </span>activate<span class="w"> </span>latest<span class="w"> </span>--permanent
+<li><p>Build with CMake/Ninja</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-S<span class="w"> </span>llvm<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-G<span class="w"> </span>Ninja<span class="w"> </span>^
+<span class="w">    </span>-DLLVM_ENABLE_EH<span class="o">=</span>ON<span class="w"> </span>^
+<span class="w">    </span>-DLLVM_ENABLE_RTTI<span class="o">=</span>ON<span class="w"> </span>^
+<span class="w">    </span>-DLLVM_ENABLE_ASSERTIONS<span class="o">=</span>ON<span class="w"> </span>^
+<span class="w">    </span>-DLLVM_TARGETS_TO_BUILD<span class="o">=</span><span class="s2">&quot;X86;ARM;AArch64;RISCV&quot;</span><span class="w"> </span>^
+<span class="w">    </span>-DCMAKE_BUILD_TYPE<span class="o">=</span>Release<span class="w"> </span>^
+<span class="w">    </span>-DLLVM_ENABLE_PROJECTS<span class="o">=</span><span class="s2">&quot;clang;lld;clang-tools-extra;lldb&quot;</span><span class="w"> </span>^
+<span class="w">    </span>-DLLVM_ENABLE_RUNTIMES<span class="o">=</span><span class="s2">&quot;libcxx;compiler-rt;libcxxabi&quot;</span>
+ninja<span class="w"> </span>-S<span class="w"> </span>build<span class="w"> </span>-j
 </pre></div>
 </div>
+</li>
+</ol>
 </div></blockquote>
 </li>
+<li><p>Build and install LLVM, then add the <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory of the
+installation to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>--install<span class="w"> </span>build<span class="w"> </span>--prefix<span class="w"> </span>&lt;path&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Patch LLVM installation to fix C++ Modules by cloning this <a class="reference external" href="https://github.com/mccakit/xmake_llvm_patch">repo</a> and overriding
+<code class="docutils literal notranslate"><span class="pre">llvm\share\libc++\v1\std</span></code></p></li>
 </ol>
 </section>
 <section id="dpc">
@@ -122,41 +135,14 @@ emsdk<span class="w"> </span>activate<span class="w"> </span>latest<span class="
 <li><p>Download and run DPC++ installer from this <a class="reference external" href="https://sycl.tech/getting-started#implementations">link</a>.</p></li>
 </ol>
 </section>
-<section id="cuda">
-<h2>CUDA<a class="headerlink" href="#cuda" title="Link to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>Download CUDA using scoop</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/cuda
+<section id="others">
+<h2>Others<a class="headerlink" href="#others" title="Link to this heading">¶</a></h2>
+<p>Install the remaining toolchains with scoop:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>emscripten<span class="w"> </span>rustup<span class="w"> </span>zig-dev
+emsdk<span class="w"> </span>install<span class="w"> </span>latest
+emsdk<span class="w"> </span>activate<span class="w"> </span>latest<span class="w"> </span>--permanent
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-</ol>
-</section>
-<section id="rustc">
-<h2>Rustc<a class="headerlink" href="#rustc" title="Link to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>Download rustup using scoop</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/rustup
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</section>
-<section id="zig">
-<h2>Zig<a class="headerlink" href="#zig" title="Link to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>Download zig using scoop</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>versions/zig-dev
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
 </section>
 </section>
 

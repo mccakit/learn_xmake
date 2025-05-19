@@ -47,10 +47,154 @@ settings.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p>Install desired extensions via the Extensions tab in Zed</p></li>
-<li><p>Install additional LSPs and formatters using tools like scoop, pip or npm</p></li>
-<li><p>Configure project settings by creating a project settings file and adding paths to your tools as needed</p></li>
+<li><p>Install extensions below via the Extensions tab in Zed</p>
+<blockquote>
+<div><table class="docutils align-left" id="id1">
+<caption><span class="caption-text">Extensions</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Extension</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>HTML</p></td>
+<td><p>HTML support</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git Firefly</p></td>
+<td><p>Provides Git Syntax Highlighting</p></td>
+</tr>
+<tr class="row-even"><td><p>Make</p></td>
+<td><p>Makefile syntax highlighting</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lua</p></td>
+<td><p>Lua Support</p></td>
+</tr>
+<tr class="row-even"><td><p>CSV</p></td>
+<td><p>CSV Language Support</p></td>
+</tr>
+<tr class="row-odd"><td><p>Python LSP</p></td>
+<td><p>Python LSP extension</p></td>
+</tr>
+<tr class="row-even"><td><p>reST</p></td>
+<td><p>reST syntax support</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p>Install additional LSPs and formatters using tools</p>
+<blockquote>
+<div><table class="docutils align-left" id="id2">
+<caption><span class="caption-text">Additional Tools</span><a class="headerlink" href="#id2" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Tool</p></td>
+<td><p>Installation Method</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>lua-language-server</p></td>
+<td><p>Scoop</p></td>
+<td><p>LSP for Lua with fast parsing and full-featured language support</p></td>
+</tr>
+<tr class="row-odd"><td><p>rstfmt</p></td>
+<td><p>pip</p></td>
+<td><p>Formatter for reStructuredText documents</p></td>
+</tr>
+<tr class="row-even"><td><p>jq</p></td>
+<td><p>Scoop</p></td>
+<td><p>Command-line JSON processor for filtering and transforming JSON data</p></td>
+</tr>
+<tr class="row-odd"><td><p>esbonio</p></td>
+<td><p>pip</p></td>
+<td><p>LSP server for reStructuredText and Sphinx-based documentation</p></td>
+</tr>
+<tr class="row-even"><td><p>rust-analyzer</p></td>
+<td><p>cargo</p></td>
+<td><p>Modern LSP server for Rust with fast, IDE-friendly tooling support</p></td>
+</tr>
+<tr class="row-odd"><td><p>zls</p></td>
+<td><p>Scoop</p></td>
+<td><p>Zig Language Server providing autocompletion, diagnostics, and more</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</li>
+<li><p>Configure project settings to use your tools</p></li>
 </ol>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;lsp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;clangd&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;binary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:/devtools/llvm/bin/clangd.exe&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--background-index&quot;</span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;lua-language-server&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;binary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:/Users/xxx/scoop/apps/lua-language-server/current/bin/lua-language-server.exe&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;esbonio&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;binary&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;esbonio&quot;</span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;languages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;C++&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;formatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;external&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:/devtools/llvm/bin/clang-format.exe&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--style=microsoft&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;{buffer_path}&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;language_servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;clangd&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;C&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;formatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;external&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:/devtools/llvm/bin/clang-format.exe&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--style=microsoft&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;{buffer_path}&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;language_servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;clangd&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;Lua&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;language_servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;lua-language-server&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;reST&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;language_servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;esbonio&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;formatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;external&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rstfmt&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;HTML&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;language_servers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;vscode-html-languageserver&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;language_overrides&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;JSONC&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;formatter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;external&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jq&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;--indent&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;.&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;{buffer_path}&quot;</span><span class="p">]</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 
 

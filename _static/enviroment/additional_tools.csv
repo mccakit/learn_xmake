@@ -1,0 +1,7 @@
+"Tool","Installation Method","Description"
+"lua-language-server","Scoop","LSP for Lua with fast parsing and full-featured language support"
+"rstfmt","pip","Formatter for reStructuredText documents"
+"jq","Scoop","Command-line JSON processor for filtering and transforming JSON data"
+"esbonio","pip","LSP server for reStructuredText and Sphinx-based documentation"
+"rust-analyzer","cargo","Modern LSP server for Rust with fast, IDE-friendly tooling support"
+"zls","Scoop","Zig Language Server providing autocompletion, diagnostics, and more"

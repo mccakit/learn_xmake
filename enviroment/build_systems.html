@@ -35,62 +35,41 @@
             
   <section id="build-systems">
 <h1>Build Systems<a class="headerlink" href="#build-systems" title="Link to this heading">¶</a></h1>
-<p>In this document, following build systems will be used:</p>
-<section id="xmake">
-<h2>XMake<a class="headerlink" href="#xmake" title="Link to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>Install it using scoop</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/xmake
+<p>This document uses the following build systems:</p>
+<table class="docutils align-left" id="id1">
+<caption><span class="caption-text">Build Systems</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 16.7%" />
+<col style="width: 66.7%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Build System</p></td>
+<td><p>Installation Method</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>XMake</p></td>
+<td><p>Scoop</p></td>
+<td><p>A lightweight, Lua-based build system designed for fast and flexible builds</p></td>
+</tr>
+<tr class="row-odd"><td><p>CMake</p></td>
+<td><p>Scoop</p></td>
+<td><p>A powerful, cross-platform tool that generates native build files for various platforms</p></td>
+</tr>
+<tr class="row-even"><td><p>Make</p></td>
+<td><p>Scoop</p></td>
+<td><p>The traditional build automation tool that uses Makefiles to manage project builds</p></td>
+</tr>
+<tr class="row-odd"><td><p>Meson</p></td>
+<td><p>Scoop</p></td>
+<td><p>A modern build system focused on speed and ease of use, commonly paired with Ninja</p></td>
+</tr>
+</tbody>
+</table>
+<p>To install all build systems using Scoop, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>xmake<span class="w"> </span>cmake<span class="w"> </span>make<span class="w"> </span>meson
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>Update to PR branch</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xmake<span class="w"> </span>update<span class="w"> </span>-s<span class="w"> </span>github:Arthapz/xmake#cakit-branch
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</section>
-<section id="cmake">
-<h2>CMake<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>Install it using scoop</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/cmake
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</section>
-<section id="make">
-<h2>Make<a class="headerlink" href="#make" title="Link to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>Install it using scoop</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>main/make
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</section>
-<section id="meson">
-<h2>Meson<a class="headerlink" href="#meson" title="Link to this heading">¶</a></h2>
-<ol class="arabic">
-<li><p>Install it using pip</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>meson
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</section>
 </section>
 
 

@@ -53,44 +53,18 @@ installed</p></li>
 <section id="cmake">
 <h2>CMake<a class="headerlink" href="#cmake" title="Link to this heading">¶</a></h2>
 <div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
-<span class="w">    </span><span class="nf">add_deps</span><span class="p">(</span><span class="s2">&quot;cmake&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">add_deps</span><span class="p">(</span><span class="s2">&quot;cmake&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;meson&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
-<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;-DGLFW_BUILD_DOCS=OFF&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;-DGLFW_BUILD_TESTS=OFF&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;-DGLFW_BUILD_EXAMPLES=OFF&quot;</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.cmake&quot;</span><span class="p">)</span>
 <span class="w">        </span><span class="nv">cmake</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">,</span><span class="w"> </span><span class="nv">configs</span><span class="p">)</span>
 <span class="w">    </span><span class="kr">end</span><span class="p">)</span>
 <span class="w"> </span><span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="make">
-<h2>Make<a class="headerlink" href="#make" title="Link to this heading">¶</a></h2>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
-<span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="s2">&quot;linux&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;macosx&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
-<span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.make&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="nv">make</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
-<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
-<span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="s2">&quot;windows&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
-<span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.nmake&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="nv">nmake</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
-<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
-<span class="w"> </span><span class="kr">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="meson">
-<h2>Meson<a class="headerlink" href="#meson" title="Link to this heading">¶</a></h2>
-<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
-<span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nf">add_deps</span><span class="p">(</span><span class="s2">&quot;meson&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
-<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
-<span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.meson&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="nv">meson</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">,</span><span class="w"> </span><span class="nv">configs</span><span class="p">)</span>
-<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
-<span class="kr">end</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

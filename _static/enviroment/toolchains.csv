@@ -1,0 +1,6 @@
+"Toolchain","Installation Method","Description"
+"LLVM","Build from source","A versatile compiler infrastructure supporting multiple CPU architectures; requires Visual Studio on Windows for building"
+"EMCC","Scoop","Emscripten compiler that translates C/C++ code into WebAssembly and JavaScript for web deployment"
+"DPC++","Installer","Data Parallel C++ compiler implementing SYCL standard for heterogeneous parallel programming across CPUs, GPUs, and FPGAs"
+"Rustc","Scoop","Official compiler for the Rust programming language, providing memory-safe and fast system-level code generation"
+"Zig","Scoop","A low-level programming language and toolchain focused on simplicity, performance, and safety with manual memory management"

@@ -1,0 +1,8 @@
+"Extension","Description"
+"HTML","HTML support"
+"Git Firefly","Provides Git Syntax Highlighting"
+"Make","Makefile syntax highlighting"
+"Lua","Lua Support"
+"CSV","CSV Language Support"
+"Python LSP","Python LSP extension"
+"reST","reST syntax support"

@@ -35,8 +35,62 @@
             
   <section id="sdk-s">
 <h1>SDK’s<a class="headerlink" href="#sdk-s" title="Link to this heading">¶</a></h1>
-<p>In this document, a x64 Debian Bookworm Docker image will be used as a
-sysroot for cross compilation.</p>
+<p>This document uses the following toolchains:</p>
+<table class="docutils align-left" id="id1">
+<caption><span class="caption-text">SDK’s</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>SDK</p></td>
+<td><p>Installation Method</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>MinGW</p></td>
+<td><p>Scoop</p></td>
+<td><p>Windows-native GCC toolchain for building portable C/C++ apps</p></td>
+</tr>
+<tr class="row-odd"><td><p>MacOS-SDK</p></td>
+<td><p>Repository</p></td>
+<td><p>Header files and libraries required to build macOS applications;</p></td>
+</tr>
+<tr class="row-even"><td><p>Debian Sysroot</p></td>
+<td><p>Docker</p></td>
+<td><p>Minimal Debian rootfs for cross-compiling Linux apps</p></td>
+</tr>
+<tr class="row-odd"><td><p>Android SDK</p></td>
+<td><p>Android Studio CLI</p></td>
+<td><p>Toolkit for building Android apps in Java, Kotlin, or C++</p></td>
+</tr>
+<tr class="row-even"><td><p>Milk-V Duo SDK</p></td>
+<td><p>Repository</p></td>
+<td><p>SDK for RISC-V-based Milk-V Duo board with toolchain and examples</p></td>
+</tr>
+<tr class="row-odd"><td><p>CHV003 SDK</p></td>
+<td><p>Repository</p></td>
+<td><p>Firmware SDK for CHV003 microcontroller with drivers and BSP</p></td>
+</tr>
+</tbody>
+</table>
+<section id="mingw">
+<h2>MinGW<a class="headerlink" href="#mingw" title="Link to this heading">¶</a></h2>
+<p>Install it using scoop</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>mingw
+</pre></div>
+</div>
+</section>
+<section id="macos-sdk">
+<h2>MacOS-SDK<a class="headerlink" href="#macos-sdk" title="Link to this heading">¶</a></h2>
+<p>Clone the repo that illegally redistributes all versions</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:alexey-lysiuk/macos-sdk.git
+</pre></div>
+</div>
+</section>
+<section id="debian">
+<h2>Debian<a class="headerlink" href="#debian" title="Link to this heading">¶</a></h2>
+<p>Set up a Debian sysroot using Docker</p>
 <ol class="arabic">
 <li><p>Install <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a> and
 <a class="reference external" href="https://rancherdesktop.io/">Rancher Desktop</a></p></li>
@@ -54,6 +108,30 @@ apt<span class="w"> </span>update<span class="p">;</span><span class="w"> </span
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">export</span><span class="w"> </span>deb<span class="w"> </span>-o<span class="w"> </span>deb.tar
 </pre></div>
 </div>
+</section>
+<section id="android-sdk">
+<h2>Android SDK<a class="headerlink" href="#android-sdk" title="Link to this heading">¶</a></h2>
+<p>Install Android Studio CLI with scoop then use that to install the SDK</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>android-clt
+sdkmanager<span class="w"> </span><span class="s2">&quot;platforms;android-25&quot;</span>
+sdkmanager<span class="w"> </span>--update
+</pre></div>
+</div>
+</section>
+<section id="milk-v-duo">
+<h2>MILK-V Duo<a class="headerlink" href="#milk-v-duo" title="Link to this heading">¶</a></h2>
+<p>Clone the official SDK for the Milk-V Duo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>git@github.com:milkv-duo/duo-buildroot-sdk-v2.git
+</pre></div>
+</div>
+</section>
+<section id="ch32v003">
+<h2>CH32V003<a class="headerlink" href="#ch32v003" title="Link to this heading">¶</a></h2>
+<p>Clone the official SDK from WCH</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>git@github.com:openwch/ch32v003.git
+</pre></div>
+</div>
+</section>
 </section>
 
 
