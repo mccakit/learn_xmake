@@ -24,7 +24,6 @@ level by calling ``set_toolchains``
 
    set_toolchains("llvm")
    target("llvm_target", function()
-        set_toolchains("msvc")
    end)
    target("msvc_target", function()
         set_toolchains("msvc")
