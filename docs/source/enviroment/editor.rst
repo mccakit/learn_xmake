@@ -24,7 +24,7 @@ settings.
 
     .. csv-table:: Additional Tools
         :file: ../_static/enviroment/additional_tools.csv
-        :widths: 3,3,6
+        :widths: 4,2,6
         :align: left
 
 #. Configure project settings to use your tools
