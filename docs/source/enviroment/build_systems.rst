@@ -2,50 +2,15 @@
  Build Systems
 ###############
 
-In this document, following build systems will be used:
+This document uses the following build systems:
 
-*******
- XMake
-*******
+.. csv-table:: Build Systems
+   :file: ../_static/enviroment/build_systems.csv
+   :widths: 2,2,8
+   :align: left
 
-#. Install it using scoop
+To install all build systems using Scoop, run:
 
-      .. code:: bash
+.. code:: bash
 
-         scoop install main/xmake
-
-#. Update to PR branch
-
-      .. code:: bash
-
-         xmake update -s github:Arthapz/xmake#cakit-branch
-
-*******
- CMake
-*******
-
-#. Install it using scoop
-
-      .. code:: bash
-
-         scoop install main/cmake
-
-******
- Make
-******
-
-#. Install it using scoop
-
-      .. code:: bash
-
-         scoop install main/make
-
-*******
- Meson
-*******
-
-#. Install it using pip
-
-      .. code:: bash
-
-         pip3 install --user meson
+    scoop install xmake cmake make meson

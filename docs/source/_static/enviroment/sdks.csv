@@ -1,0 +1,7 @@
+"SDK","Installation Method","Description"
+"MinGW","Scoop","Windows-native GCC toolchain for building portable C/C++ apps"
+"MacOS-SDK","Repository","Header files and libraries required to build macOS applications;"
+"Debian Sysroot","Docker","Minimal Debian rootfs for cross-compiling Linux apps"
+"Android SDK","Android Studio CLI","Toolkit for building Android apps in Java, Kotlin, or C++"
+"Milk-V Duo SDK","Repository","SDK for RISC-V-based Milk-V Duo board with toolchain and examples"
+"CHV003 SDK","Repository","Firmware SDK for CHV003 microcontroller with drivers and BSP"

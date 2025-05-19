@@ -1,0 +1,5 @@
+"Build System","Installation Method","Description"
+"XMake","Scoop","A lightweight, Lua-based build system designed for fast and flexible builds"
+"CMake","Scoop","A powerful, cross-platform tool that generates native build files for various platforms"
+"Make","Scoop","The traditional build automation tool that uses Makefiles to manage project builds"
+"Meson","Scoop","A modern build system focused on speed and ease of use, commonly paired with Ninja"

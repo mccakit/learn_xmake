@@ -25,45 +25,15 @@ To consume a third party package:
 .. code:: lua
 
    package("foo", function()
-       add_deps("cmake")
+       add_deps("cmake", "meson")
        set_sourcedir("foo")
        on_install(function (package)
-           local configs = {}
+           local configs = {
+               "-DGLFW_BUILD_DOCS=OFF",
+               "-DGLFW_BUILD_TESTS=OFF",
+               "-DGLFW_BUILD_EXAMPLES=OFF"
+           }
            import("package.tools.cmake")
            cmake.install(package, configs)
        end)
     end)
-
-******
- Make
-******
-
-.. code:: lua
-
-   package("foo", function()
-       set_sourcedir("foo")
-       on_install("linux", "macosx", function (package)
-           import("package.tools.make")
-           make.install(package)
-       end)
-       on_install("windows", function (package)
-           import("package.tools.nmake")
-           nmake.install(package)
-       end)
-    end)
-
-*******
- Meson
-*******
-
-.. code:: lua
-
-   package("foo", function()
-       set_sourcedir("foo")
-       add_deps("meson")
-       on_install(function (package)
-           local configs = {}
-           import("package.tools.meson")
-           meson.install(package, configs)
-       end)
-   end)

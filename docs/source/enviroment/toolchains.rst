@@ -2,7 +2,12 @@
  Toolchains
 ############
 
-In this document, following toolchains will be used:
+This document uses the following toolchains:
+
+.. csv-table:: Toolchains
+   :file: ../_static/enviroment/toolchains.csv
+   :widths: 2,2,8
+   :align: left
 
 ******
  LLVM
@@ -21,58 +26,46 @@ dependencies.
 
 #. Install additional dependencies
 
-      #. Install cmake, python, make and git with ``scoop install``
+      .. code:: bash
 
-#. Build and Install LLVM
+         scoop install python git
+
+#. Build and Install LLVM in "x64 Native Tools Command Prompt"
 
       #. Clone the LLVM repository. I recommend using `this PR branch
          <https://github.com/tcottin/llvm-project>`_ as it enables
          Doxygen-style formatting on hover.
 
-         .. note::
+         .. code:: bash
 
-            Don't forget to switch to ``clangd-doxygen-parser`` branch
+            git clone --recursive git@github.com:tcottin/llvm-project.git
+            cd llvm-project
+            git switch clangd-doxygen-parser
 
-      #. Open the x64 Native Tools Command Prompt and navigate to to
-         your llvm repository
+      #. Build with CMake/Ninja
 
-      #. Create build configuation file with ``cmake``
+         .. code:: bash
 
-         .. note::
+            cmake -S llvm -B build -G Ninja ^
+                -DLLVM_ENABLE_EH=ON ^
+                -DLLVM_ENABLE_RTTI=ON ^
+                -DLLVM_ENABLE_ASSERTIONS=ON ^
+                -DLLVM_TARGETS_TO_BUILD="X86;ARM;AArch64;RISCV" ^
+                -DCMAKE_BUILD_TYPE=Release ^
+                -DLLVM_ENABLE_PROJECTS="clang;lld;clang-tools-extra;lldb" ^
+                -DLLVM_ENABLE_RUNTIMES="libcxx;compiler-rt;libcxxabi"
+            ninja -S build -j
 
-            I recommend building clang, lld, clang-tools-extra, lldb,
-            libcxx, libc and compiler-rt with exception handling,
-            run-time type information and assertions enabled. For
-            targets, I suggest building X86, ARM and RISC-V
+#. Build and install LLVM, then add the ``bin`` directory of the
+   installation to your ``PATH``
 
-      #. Build and install LLVM with ``ninja --build`` and ```cmake
-         --install``
+   .. code:: bash
 
-#. Patch LLVM installation so C++ Modules work
+      cmake --install build --prefix <path>
 
-      #. Clone this `repo
-         <https://github.com/mccakit/xmake_llvm_patch>`_ that contains
-         patch files for ``llvm\share\libc++\v1\std`` just override the
-         files
-
-#. Add the bin folder of your installation to your PATH
-
-******
- EMCC
-******
-
-#. Download emscripten using scoop
-
-      .. code:: bash
-
-         scoop install main/emscripten
-
-#. Install and activate Emscripten
-
-      .. code:: bash
-
-         emsdk install latest
-         emsdk activate latest --permanent
+#. Patch LLVM installation to fix C++ Modules by cloning this `repo
+   <https://github.com/mccakit/xmake_llvm_patch>`_ and overriding
+   ``llvm\share\libc++\v1\std``
 
 *******
  DPC++
@@ -81,32 +74,14 @@ dependencies.
 #. Download and run DPC++ installer from this `link
    <https://sycl.tech/getting-started#implementations>`__.
 
-******
- CUDA
-******
+********
+ Others
+********
 
-#. Download CUDA using scoop
+Install the remaining toolchains with scoop:
 
-      .. code:: bash
+.. code:: bash
 
-         scoop install main/cuda
-
-*******
- Rustc
-*******
-
-#. Download rustup using scoop
-
-      .. code:: bash
-
-         scoop install main/rustup
-
-*****
- Zig
-*****
-
-#. Download zig using scoop
-
-      .. code:: bash
-
-         scoop install versions/zig-dev
+   scoop install emscripten rustup zig-dev
+   emsdk install latest
+   emsdk activate latest --permanent

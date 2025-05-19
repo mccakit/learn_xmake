@@ -28,3 +28,4 @@ use:
 -  ``add_syslinks()`` link to system libraries
 -  ``add_cxflags()`` add C/C++ flags
 -  ``add_ldflags()`` add linker flags
+-  ``add_defines()`` add definitions

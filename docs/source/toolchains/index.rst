@@ -7,4 +7,3 @@
    :caption: Contents:
 
    overview
-   configuration
