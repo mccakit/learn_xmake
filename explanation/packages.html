@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Packages &#8212; Learn XMake 0.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=7026087e"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Toolchains" href="toolchains.html" />
+    <link rel="prev" title="Targets" href="targets.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="packages">
+<h1>Packages<a class="headerlink" href="#packages" title="Link to this heading">¶</a></h1>
+<p>In a build system, a package collects <code class="docutils literal notranslate"><span class="pre">pre-built</span></code> or
+<code class="docutils literal notranslate"><span class="pre">pre-configured</span></code> resources that seamlessly integrate into your
+project’s build process.</p>
+<p>XMake lets you package a <code class="docutils literal notranslate"><span class="pre">target</span></code> with the <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">package</span></code> command.
+Add parameters to specify the package format and other options.</p>
+<p>To use packages in your project:</p>
+<ol class="arabic simple">
+<li><p>Add the repository containing the package with <code class="docutils literal notranslate"><span class="pre">add_repositories</span></code>.</p></li>
+<li><p>Declare the required packages using <code class="docutils literal notranslate"><span class="pre">add_requires</span></code>.</p></li>
+<li><p>Make the packages available to your targets with <code class="docutils literal notranslate"><span class="pre">add_packages</span></code>.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xmake<span class="w"> </span>package<span class="w"> </span>--format<span class="o">=</span><span class="nb">local</span><span class="w"> </span>static_lib
+</pre></div>
+</div>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">add_repositories</span><span class="p">(</span><span class="s2">&quot;alias&quot;</span><span class="w"> </span><span class="s2">&quot;repository&quot;</span><span class="p">)</span>
+<span class="nf">add_requires</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="nf">target</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+<span class="w">     </span><span class="nf">add_packages</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="local-packages">
+<h2>Local Packages<a class="headerlink" href="#local-packages" title="Link to this heading">¶</a></h2>
+<p>Local packages are <strong>precompiled binaries</strong> that can be used directly,
+without the need for remote downloads or additional build steps.</p>
+<p>To create a local package:</p>
+<ol class="arabic simple">
+<li><p>Build a target using <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">build</span></code>.</p></li>
+<li><p>Package it with <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">package</span> <span class="pre">--format=local</span></code>.</p></li>
+<li><p>Copy the generated build/packages directory to the repository of your
+choice.</p></li>
+</ol>
+</section>
+<section id="remote-package">
+<h2>Remote Package<a class="headerlink" href="#remote-package" title="Link to this heading">¶</a></h2>
+<p>Remote packages are <strong>build instructions</strong> used to compile a specific
+target. They are especially important in <em>cross-compilation</em> scenarios,
+where the build environment differs from the target system</p>
+<p>To create a remote package:</p>
+<ol class="arabic">
+<li><p>Create a repository that contains the target you will package</p></li>
+<li><p>Package a target with <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">package</span> <span class="pre">--format=remote</span> <span class="pre">--url=&lt;url&gt;</span>
+<span class="pre">--version=&lt;version&gt;</span></code>.</p></li>
+<li><p>Copy the generated build/packages directory to your chosen repository</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Package repositories should only contain the packages folder,
+not build/packages</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="third-party-packages">
+<h2>Third Party Packages<a class="headerlink" href="#third-party-packages" title="Link to this heading">¶</a></h2>
+<p>XMake lets you import and use packages defined in other build systems,
+such as CMake</p>
+<p>To use a third party package:</p>
+<ol class="arabic simple">
+<li><p>Clone the source repository of the package you want to use</p></li>
+<li><p>Define a remote package with the <code class="docutils literal notranslate"><span class="pre">package</span></code> function and import the
+third-party build system using <code class="docutils literal notranslate"><span class="pre">import</span></code></p></li>
+<li><p>Create a configuration table to specify your desired installation
+settings</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">extension.install</span></code> to specify how the package should be built
+and installed</p></li>
+</ol>
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="nf">package</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+<span class="w">    </span><span class="nf">add_deps</span><span class="p">(</span><span class="s2">&quot;cmake&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">set_sourcedir</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nf">on_install</span><span class="p">(</span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">package</span><span class="p">)</span>
+<span class="w">        </span><span class="kd">local</span><span class="w"> </span><span class="nv">configs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">&quot;-DGLFW_BUILD_DOCS=OFF&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;-DGLFW_BUILD_TESTS=OFF&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;-DGLFW_BUILD_EXAMPLES=OFF&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="nf">import</span><span class="p">(</span><span class="s2">&quot;package.tools.cmake&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="nv">cmake</span><span class="p">.</span><span class="nf">install</span><span class="p">(</span><span class="nv">package</span><span class="p">,</span><span class="w"> </span><span class="nv">configs</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">end</span><span class="p">)</span>
+<span class="w"> </span><span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Learn XMake</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enviroment/index.html">Enviroment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Explanation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="targets.html">Targets</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toolchains.html">Toolchains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scripting.html">Scripting</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Explanation</a><ul>
+      <li>Previous: <a href="targets.html" title="previous chapter">Targets</a></li>
+      <li>Next: <a href="toolchains.html" title="next chapter">Toolchains</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, mccakit.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/explanation/packages.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
