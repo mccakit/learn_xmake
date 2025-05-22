@@ -57,12 +57,13 @@ Set up a Debian sysroot using Docker
  Android SDK
 *************
 
-Install Android Studio CLI with scoop then use that to install the SDK
+Install Android Studio CLI with scoop then use that to install the SDK and NDK
 
 .. code:: bash
 
    scoop install android-clt
    sdkmanager "platforms;android-25"
+   sdkmanager "ndk-bundle"
    sdkmanager --update
 
 ************
