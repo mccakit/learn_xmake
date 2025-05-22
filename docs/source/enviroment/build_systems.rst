@@ -13,4 +13,4 @@ To install all build systems using Scoop, run:
 
 .. code:: bash
 
-    scoop install xmake cmake make meson
+    scoop install xmake cmake make meson gradle

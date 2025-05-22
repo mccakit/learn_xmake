@@ -82,6 +82,6 @@ Install the remaining toolchains with scoop:
 
 .. code:: bash
 
-   scoop install emscripten rustup zig-dev
+   scoop install emscripten rustup zig-dev openjdk17
    emsdk install latest
    emsdk activate latest --permanent

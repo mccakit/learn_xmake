@@ -3,3 +3,4 @@
 "CMake","Scoop","A powerful, cross-platform tool that generates native build files for various platforms"
 "Make","Scoop","The traditional build automation tool that uses Makefiles to manage project builds"
 "Meson","Scoop","A modern build system focused on speed and ease of use, commonly paired with Ninja"
+"Gradle","Scoop","A flexible build automation tool primarily used for Java projects, supporting Groovy and Kotlin DSLs"
